@@ -17,8 +17,9 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 191 87% 30%;
     --primary-foreground: 210 40% 98%;
+    --primary-glow: 191 87% 50%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -26,47 +27,54 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 191 87% 30%;
+    --accent-foreground: 210 40% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 191 87% 30%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Portfolio-specific colors */
+    --portfolio-bg: 0 0% 98%;
+    --portfolio-card: 0 0% 100%;
+    --portfolio-text: 222.2 84% 4.9%;
+    --portfolio-text-muted: 215.4 16.3% 46.9%;
+    --portfolio-accent: 191 87% 30%;
+    --portfolio-accent-hover: 191 87% 25%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(191 87% 30%), hsl(191 87% 50%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 98%), hsl(210 40% 96%));
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(222.2 84% 4.9% / 0.1), 0 2px 4px -1px hsl(222.2 84% 4.9% / 0.06);
+    --shadow-hover: 0 10px 15px -3px hsl(191 87% 30% / 0.1), 0 4px 6px -2px hsl(191 87% 30% / 0.05);
+    --shadow-glow: 0 0 30px hsl(191 87% 50% / 0.3);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 217.2 32.6% 17.5%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222.2 84% 4.9%;
+    --popover: 217.2 32.6% 17.5%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 191 87% 50%;
     --primary-foreground: 222.2 47.4% 11.2%;
+    --primary-glow: 191 87% 70%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -74,23 +82,33 @@ All colors MUST be HSL.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 191 87% 50%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --ring: 191 87% 50%;
+
+    /* Portfolio-specific colors - dark mode */
+    --portfolio-bg: 222.2 84% 4.9%;
+    --portfolio-card: 217.2 32.6% 17.5%;
+    --portfolio-text: 210 40% 98%;
+    --portfolio-text-muted: 215 20.2% 65.1%;
+    --portfolio-accent: 191 87% 50%;
+    --portfolio-accent-hover: 191 87% 60%;
+
+    /* Gradients - dark mode */
+    --gradient-hero: linear-gradient(135deg, hsl(191 87% 50%), hsl(191 87% 70%));
+    --gradient-card: linear-gradient(135deg, hsl(217.2 32.6% 17.5%), hsl(217.2 32.6% 20%));
+    --gradient-section: linear-gradient(180deg, hsl(222.2 84% 4.9%), hsl(217.2 32.6% 17.5%));
+
+    /* Shadows - dark mode */
+    --shadow-card: 0 4px 6px -1px hsl(222.2 84% 4.9% / 0.3), 0 2px 4px -1px hsl(222.2 84% 4.9% / 0.2);
+    --shadow-hover: 0 10px 15px -3px hsl(191 87% 50% / 0.2), 0 4px 6px -2px hsl(191 87% 50% / 0.1);
+    --shadow-glow: 0 0 30px hsl(191 87% 70% / 0.4);
   }
 }
 
@@ -101,5 +119,78 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .portfolio-section {
+    @apply py-20 px-6 bg-[var(--portfolio-bg)] transition-all duration-300;
+  }
+
+  .portfolio-card {
+    @apply bg-[var(--portfolio-card)] rounded-xl p-6 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-hover)] transition-all duration-300 hover:-translate-y-1 border border-border/50;
+  }
+
+  .portfolio-button {
+    @apply bg-[var(--portfolio-accent)] hover:bg-[var(--portfolio-accent-hover)] text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-[var(--shadow-glow)] active:scale-95;
+  }
+
+  .portfolio-nav-link {
+    @apply text-[var(--portfolio-text)] hover:text-[var(--portfolio-accent)] transition-all duration-300 relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[var(--portfolio-accent)] after:left-0 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .portfolio-gradient-text {
+    @apply bg-gradient-to-r from-[var(--portfolio-accent)] to-[var(--primary-glow)] bg-clip-text text-transparent;
+  }
+
+  .portfolio-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+  }
+
+  .portfolio-container {
+    @apply max-w-7xl mx-auto px-6;
+  }
+
+  .stagger-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: stagger-in 0.6s ease-out forwards;
+  }
+
+  @keyframes stagger-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+
+  @keyframes fade-in-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .scale-in {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: scale-in 0.6s ease-out forwards;
+  }
+
+  @keyframes scale-in {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 }
