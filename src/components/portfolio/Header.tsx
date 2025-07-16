@@ -17,12 +17,13 @@ export default function Header({ activeSection }: HeaderProps) {
   }, []);
 
   const navigationItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Education', href: '#education' },
+    { label: 'À propos', href: '#about' },
+    { label: 'Stage', href: '#internships' },
+    { label: 'Projets', href: '#projects' },
+    { label: 'Formation', href: '#education' },
     { label: 'Certifications', href: '#certifications' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Languages', href: '#languages' },
+    { label: 'Expérience', href: '#experience' },
+    { label: 'Langues', href: '#languages' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -59,7 +60,7 @@ export default function Header({ activeSection }: HeaderProps) {
               Ahmed Mezghani
             </h1>
             <p className="text-sm text-muted-foreground hidden sm:block">
-              Aspiring Software Engineer & Computer Science Student
+              Futur Ingénieur Logiciel & Étudiant en Informatique
             </p>
           </motion.div>
 
@@ -69,6 +70,7 @@ export default function Header({ activeSection }: HeaderProps) {
               className="p-2 rounded-lg hover:bg-accent/20 transition-colors"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              aria-label={theme === 'dark' ? 'Activer le mode clair' : 'Activer le mode sombre'}
             >
               {theme === 'dark' ? (
                 <Sun className="h-5 w-5 text-portfolio-accent" />

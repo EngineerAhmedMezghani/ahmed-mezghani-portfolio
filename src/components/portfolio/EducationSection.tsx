@@ -5,21 +5,21 @@ export default function EducationSection() {
   const educationItems = [
     {
       icon: <GraduationCap className="h-6 w-6" />,
-      title: "Baccalauréat in Mathematics",
+      title: "Baccalauréat en Mathématiques",
       year: "2022",
-      description: "Graduated with honors in Mathematics, building a strong foundation in analytical thinking and problem-solving."
+      description: "Diplômé avec mention en Mathématiques, établissant une base solide en pensée analytique et résolution de problèmes. Cette formation m'a permis de développer une rigueur scientifique essentielle pour l'informatique."
     },
     {
       icon: <Award className="h-6 w-6" />,
-      title: "National Engineering Schools Entrance Exam",
+      title: "Concours National d'Entrée aux Écoles d'Ingénieurs",
       year: "2024",
-      description: "Successfully admitted to the National Engineering Schools Entrance Exam, demonstrating academic excellence."
+      description: "Admis avec succès au concours national d'entrée aux écoles d'ingénieurs, démontrant l'excellence académique et la capacité à relever des défis intellectuels exigeants."
     },
     {
       icon: <BookOpen className="h-6 w-6" />,
-      title: "Engineering Student in Computer Science",
-      year: "2024 - Present",
-      description: "Currently pursuing Engineering studies in Computer Science at ENIS Sfax, preparing for the national engineering school entrance exam."
+      title: "Étudiant Ingénieur en Informatique - ENIS Sfax",
+      year: "2024 - Présent",
+      description: "Actuellement en cursus d'ingénieur en Informatique à l'École Nationale d'Ingénieurs de Sfax. Formation approfondie en algorithmes, structures de données, développement logiciel et intelligence artificielle."
     }
   ];
 
@@ -39,7 +39,7 @@ export default function EducationSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Education
+            Formation
           </motion.h2>
           
           <div className="max-w-4xl mx-auto">

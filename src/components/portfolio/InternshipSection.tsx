@@ -5,28 +5,28 @@ export default function InternshipSection() {
   const features = [
     {
       icon: <Eye className="h-6 w-6" />,
-      title: "Person Detection",
-      description: "Real-time person detection using YOLOv8"
+      title: "Détection de Personnes",
+      description: "Détection en temps réel avec YOLOv8"
     },
     {
       icon: <Users className="h-6 w-6" />,
-      title: "Crowd Tracking",
-      description: "Track individuals in defined zones with DeepSORT"
+      title: "Suivi de Foule",
+      description: "Suivi d'individus dans des zones définies avec DeepSORT"
     },
     {
       icon: <AlertTriangle className="h-6 w-6" />,
-      title: "Alert Generation",
-      description: "Intelligent alert system for crowd management"
+      title: "Génération d'Alertes",
+      description: "Système d'alertes intelligent pour la gestion de foule"
     },
     {
       icon: <TrendingUp className="h-6 w-6" />,
-      title: "Visual Analytics",
-      description: "Comprehensive analytics dashboard"
+      title: "Analytiques Visuels",
+      description: "Tableau de bord d'analyse complet"
     }
   ];
 
   return (
-    <section id="cv-internship" className="portfolio-section bg-gradient-to-b from-portfolio-bg to-muted/20">
+    <section id="internships" className="portfolio-section bg-gradient-to-b from-portfolio-bg to-muted/20">
       <div className="portfolio-container">
         <motion.div 
           className="text-center max-w-4xl mx-auto"
@@ -42,7 +42,7 @@ export default function InternshipSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Computer Vision Internship
+            Stage en Computer Vision
           </motion.h2>
           
           <motion.div 
@@ -54,15 +54,16 @@ export default function InternshipSection() {
           >
             <div className="space-y-6 text-lg leading-relaxed">
               <p>
-                In the summer of 2025,
+                Été 2025,
               </p>
               <p>
-                💼 I'm currently an intern at{' '}
+                💼 Je suis actuellement stagiaire chez{' '}
                 <a 
                   href="https://www.visshopai.com/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="font-semibold text-portfolio-accent hover:text-portfolio-accent-hover transition-colors inline-flex items-center gap-1"
+                  aria-label="Site web de VisShop AI (ouvre dans un nouvel onglet)"
                 >
                   VisShop AI
                   <ExternalLink className="h-4 w-4" />
@@ -70,10 +71,10 @@ export default function InternshipSection() {
                 ,
               </p>
               <p>
-                working on the <span className="font-bold text-portfolio-accent">VisioTrack</span> project — an intelligent real-time crowd monitoring system using computer vision (YOLOv8, DeepSORT), FastAPI, and React.
+                travaillant sur le projet <span className="font-bold text-portfolio-accent">VisioTrack</span> — un système intelligent de surveillance de foule en temps réel utilisant la computer vision (YOLOv8, DeepSORT), FastAPI et React.
               </p>
               <p>
-                My contributions focus on person detection, tracking in defined zones, alert generation, and visual analytics.
+                Mes contributions se concentrent sur la détection de personnes, le suivi dans des zones définies, la génération d'alertes et l'analyse visuelle.
               </p>
             </div>
           </motion.div>

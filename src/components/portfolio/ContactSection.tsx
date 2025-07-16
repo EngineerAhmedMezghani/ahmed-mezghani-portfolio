@@ -35,8 +35,8 @@ export default function ContactSection() {
       );
 
       toast({
-        title: "Message sent successfully!",
-        description: "Thank you for your message. I'll get back to you soon.",
+        title: "Message envoyé avec succès !",
+        description: "Merci pour votre message. Je vous répondrai rapidement.",
       });
 
       setFormData({
@@ -47,8 +47,8 @@ export default function ContactSection() {
       });
     } catch (error) {
       toast({
-        title: "Error sending message",
-        description: "Please try again later or contact me directly.",
+        title: "Erreur lors de l'envoi",
+        description: "Veuillez réessayer plus tard ou me contacter directement.",
         variant: "destructive",
       });
     } finally {
@@ -70,7 +70,7 @@ export default function ContactSection() {
       color: "hover:text-blue-600"
     },
     {
-      name: "Download CV",
+      name: "Télécharger CV",
       href: "/api/placeholder/cv/Ahmed_Mezghani_eng.pdf",
       icon: <Download className="h-5 w-5" />,
       color: "hover:text-green-600",
@@ -94,7 +94,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Get In Touch
+            Me Contacter
           </motion.h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -108,7 +108,7 @@ export default function ContactSection() {
             >
               <div className="portfolio-card">
                 <h3 className="text-2xl font-semibold text-portfolio-text mb-6">
-                  Send me a message
+                  Envoyez-moi un message
                 </h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -118,7 +118,7 @@ export default function ContactSection() {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Your Name"
+                      placeholder="Votre nom"
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors"
                     />
@@ -130,7 +130,7 @@ export default function ContactSection() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="Your Email"
+                      placeholder="Votre email"
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors"
                     />
@@ -142,7 +142,7 @@ export default function ContactSection() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      placeholder="Subject"
+                      placeholder="Sujet"
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors"
                     />
@@ -153,7 +153,7 @@ export default function ContactSection() {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Your Message"
+                      placeholder="Votre message"
                       rows={5}
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors resize-none"
@@ -172,7 +172,7 @@ export default function ContactSection() {
                     ) : (
                       <>
                         <Send className="h-5 w-5" />
-                        Send Message
+                        Envoyer
                       </>
                     )}
                   </motion.button>
@@ -190,7 +190,7 @@ export default function ContactSection() {
             >
               <div className="portfolio-card">
                 <h3 className="text-2xl font-semibold text-portfolio-text mb-6">
-                  Contact Information
+                  Informations de Contact
                 </h3>
                 
                 <div className="space-y-4">
@@ -209,7 +209,7 @@ export default function ContactSection() {
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-portfolio-text-muted">Phone</p>
+                      <p className="text-portfolio-text-muted">Téléphone</p>
                       <p className="text-portfolio-text">+216 XX XXX XXX</p>
                     </div>
                   </div>
@@ -219,8 +219,8 @@ export default function ContactSection() {
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-portfolio-text-muted">Location</p>
-                      <p className="text-portfolio-text">Sfax, Tunisia</p>
+                      <p className="text-portfolio-text-muted">Localisation</p>
+                      <p className="text-portfolio-text">Sfax, Tunisie</p>
                     </div>
                   </div>
                 </div>
@@ -228,7 +228,7 @@ export default function ContactSection() {
               
               <div className="portfolio-card">
                 <h3 className="text-xl font-semibold text-portfolio-text mb-6">
-                  Connect with me
+                  Connectez-vous avec moi
                 </h3>
                 
                 <div className="flex flex-wrap gap-4">

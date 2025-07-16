@@ -4,32 +4,52 @@ import { ExternalLink, Github } from 'lucide-react';
 export default function ProjectsSection() {
   const projects = [
     {
-      title: "Android App for Selling Computer Hardware",
-      tech: "Java, Android Studio",
-      description: "Developed a full-featured mobile application for Browse and purchasing computer hardware. Implemented product catalog, user authentication, and order management. Enhanced user experience with intuitive UI and secure transactions.",
+      title: "Application Android - Vente de Matériel Informatique",
+      tech: ["Java", "Android Studio", "SQLite", "Material Design"],
+      description: "Application mobile complète permettant la vente et l'achat de matériel informatique. Implémentation d'un catalogue de produits, système d'authentification sécurisé, gestion des commandes et panier d'achat. Interface utilisateur intuitive avec animations fluides et design responsive.",
+      objectives: "Créer une plateforme mobile accessible pour démocratiser l'achat de matériel informatique",
+      challenges: "Optimisation des performances pour les appareils bas de gamme, synchronisation des données offline/online",
+      features: ["Catalogue de produits filtrable", "Système de panier", "Authentification sécurisée", "Notifications push", "Mode hors ligne"],
       image: "/api/placeholder/400/300",
-      category: "Mobile Development"
+      category: "Développement Mobile",
+      github: "https://github.com/ahmed-mezghani/hardware-store-android",
+      demo: null
     },
     {
-      title: "Football Match Analysis with Computer Vision",
-      tech: "Python, YOLO, Machine Learning",
-      description: "Built a system to analyze football matches using computer vision techniques. Utilized YOLO for object detection and machine learning models to extract and interpret match statistics, providing valuable insights for coaches and analysts.",
+      title: "Analyse de Matchs de Football avec Computer Vision",
+      tech: ["Python", "YOLO", "OpenCV", "TensorFlow", "NumPy"],
+      description: "Système d'analyse avancée de matchs de football utilisant des techniques de computer vision. Détection et suivi des joueurs avec YOLO, extraction automatique de statistiques de jeu et génération de rapports d'analyse pour entraîneurs et analystes sportifs.",
+      objectives: "Fournir des insights précis et automatisés pour l'analyse tactique sportive",
+      challenges: "Détection précise des joueurs en mouvement, gestion des occlusions, traitement temps réel",
+      features: ["Détection de joueurs", "Suivi de trajectoires", "Calcul de statistiques", "Heatmaps de positions", "Export de rapports"],
       image: "/api/placeholder/400/300",
-      category: "Computer Vision"
+      category: "Intelligence Artificielle",
+      github: "https://github.com/ahmed-mezghani/football-analysis-cv",
+      demo: "https://football-analysis-demo.com"
     },
     {
-      title: "Event Reservation System",
-      tech: "HTML, CSS, JavaScript, PHP, MySQL",
-      description: "Designed and implemented a web-based event reservation platform with a responsive front-end and robust back-end. Enabled users to browse events, reserve seats, and manage bookings efficiently.",
+      title: "Système de Réservation d'Événements",
+      tech: ["HTML5", "CSS3", "JavaScript ES6", "PHP", "MySQL"],
+      description: "Plateforme web complète de réservation d'événements avec interface responsive et backend robuste. Gestion des utilisateurs, réservation de places en temps réel, système de paiement intégré et tableau de bord administrateur pour la gestion des événements.",
+      objectives: "Simplifier la réservation d'événements avec une expérience utilisateur optimale",
+      challenges: "Gestion de la concurrence pour les réservations, intégration sécurisée des paiements",
+      features: ["Calendrier interactif", "Réservation temps réel", "Paiement sécurisé", "Dashboard admin", "Notifications email"],
       image: "/api/placeholder/400/300",
-      category: "Web Development"
+      category: "Développement Web",
+      github: "https://github.com/ahmed-mezghani/event-reservation",
+      demo: "https://event-reservation-demo.com"
     },
     {
-      title: "Personal Portfolio Website",
-      tech: "HTML, CSS, JavaScript",
-      description: "Developed a personal portfolio website to showcase my projects and skills. Focused on responsive design and user-friendly navigation to enhance the overall user experience.",
+      title: "Portfolio Personnel Interactif",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      description: "Site web portfolio personnel moderne avec animations fluides et design responsive. Optimisé pour les performances et l'accessibilité, intégrant un système de thèmes sombre/clair et des micro-interactions engageantes.",
+      objectives: "Créer une vitrine professionnelle reflétant mes compétences techniques et créatives",
+      challenges: "Optimisation des performances, accessibilité totale, design cohérent multi-devices",
+      features: ["Design responsive", "Mode sombre/clair", "Animations CSS", "SEO optimisé", "Performance optimisée"],
       image: "/api/placeholder/400/300",
-      category: "Web Development"
+      category: "Développement Web",
+      github: "https://github.com/ahmed-mezghani/portfolio",
+      demo: "https://ahmed-mezghani.dev"
     }
   ];
 
@@ -49,10 +69,10 @@ export default function ProjectsSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Projects
+            Mes Projets
           </motion.h2>
           
-          <div className="portfolio-grid">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -62,7 +82,7 @@ export default function ProjectsSection() {
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="relative overflow-hidden rounded-lg mb-4">
+                <div className="relative overflow-hidden rounded-lg mb-6">
                   <img 
                     src={project.image} 
                     alt={project.title}
@@ -71,39 +91,116 @@ export default function ProjectsSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="flex gap-2">
-                      <motion.button
-                        className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <Github className="h-4 w-4 text-white" />
-                      </motion.button>
-                      <motion.button
-                        className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <ExternalLink className="h-4 w-4 text-white" />
-                      </motion.button>
+                      {project.github && (
+                        <motion.a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          aria-label="Voir le code source sur GitHub"
+                        >
+                          <Github className="h-4 w-4 text-white" />
+                        </motion.a>
+                      )}
+                      {project.demo && (
+                        <motion.a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          aria-label="Voir la démo en ligne"
+                        >
+                          <ExternalLink className="h-4 w-4 text-white" />
+                        </motion.a>
+                      )}
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="px-2 py-1 bg-portfolio-accent/90 text-white text-xs rounded-full">
+                    <span className="px-3 py-1 bg-portfolio-accent/90 text-white text-sm rounded-full font-medium">
                       {project.category}
                     </span>
                   </div>
                 </div>
                 
-                <div className="space-y-3">
-                  <h3 className="text-xl font-semibold text-portfolio-text group-hover:text-portfolio-accent transition-colors">
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold text-portfolio-text group-hover:text-portfolio-accent transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-sm font-medium text-portfolio-accent">
-                    <strong>Tech Stack:</strong> {project.tech}
-                  </p>
-                  <p className="text-portfolio-text-muted leading-relaxed">
-                    {project.description}
-                  </p>
+                  
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="text-sm font-semibold text-portfolio-accent mb-2">Technologies utilisées :</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech, techIndex) => (
+                          <span 
+                            key={techIndex}
+                            className="px-2 py-1 bg-secondary text-secondary-foreground text-xs rounded-md font-medium"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    <p className="text-portfolio-text-muted leading-relaxed text-sm">
+                      {project.description}
+                    </p>
+                    
+                    <div className="space-y-2">
+                      <div>
+                        <span className="text-xs font-semibold text-portfolio-accent">Objectif :</span>
+                        <p className="text-xs text-portfolio-text-muted mt-1">{project.objectives}</p>
+                      </div>
+                      
+                      <div>
+                        <span className="text-xs font-semibold text-portfolio-accent">Défis techniques :</span>
+                        <p className="text-xs text-portfolio-text-muted mt-1">{project.challenges}</p>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <span className="text-xs font-semibold text-portfolio-accent">Fonctionnalités clés :</span>
+                      <ul className="mt-1 space-y-1">
+                        {project.features.slice(0, 3).map((feature, featureIndex) => (
+                          <li key={featureIndex} className="text-xs text-portfolio-text-muted flex items-center">
+                            <span className="w-1 h-1 bg-portfolio-accent rounded-full mr-2"></span>
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="flex gap-3 pt-2">
+                      {project.github && (
+                        <a
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="portfolio-button-outline text-sm py-2 px-4"
+                          aria-label="Voir le code source"
+                        >
+                          <Github className="h-4 w-4 mr-2 inline" />
+                          Code
+                        </a>
+                      )}
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="portfolio-button text-sm py-2 px-4"
+                          aria-label="Voir la démo"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2 inline" />
+                          Démo
+                        </a>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             ))}

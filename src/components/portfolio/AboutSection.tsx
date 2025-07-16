@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import ahmedPhoto from '@/assets/ahmed-photo.jpg';
 
 export default function AboutSection() {
   return (
@@ -21,8 +22,8 @@ export default function AboutSection() {
             >
               <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-portfolio-accent to-primary-glow p-1">
                 <img 
-                  src="/api/placeholder/200/200" 
-                  alt="Ahmed Mezghani" 
+                  src={ahmedPhoto} 
+                  alt="Photo de profil d'Ahmed Mezghani, étudiant en informatique" 
                   className="w-full h-full rounded-full object-cover"
                 />
               </div>
@@ -37,7 +38,7 @@ export default function AboutSection() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                About Me
+                À Propos de Moi
               </motion.h2>
               
               <motion.div 
@@ -48,13 +49,21 @@ export default function AboutSection() {
                 viewport={{ once: true }}
               >
                 <p>
-                  I am a Computer Science student at <span className="font-semibold text-portfolio-accent">ENIS Sfax</span>,
+                  Je suis étudiant en <span className="font-semibold text-portfolio-accent">Informatique à l'ENIS Sfax</span>, 
+                  passionné par le développement logiciel et l'intelligence artificielle.
                 </p>
                 <p>
-                  passionately interested in <span className="font-semibold text-portfolio-accent">software development</span> and <span className="font-semibold text-portfolio-accent">artificial intelligence</span>.
+                  Mon parcours m'a permis d'acquérir une solide expertise en <span className="font-semibold text-portfolio-accent">développement web</span>, 
+                  <span className="font-semibold text-portfolio-accent"> programmation orientée objet</span>, et 
+                  <span className="font-semibold text-portfolio-accent"> technologies modernes</span>.
                 </p>
                 <p>
-                  I enjoy building impactful software solutions and exploring the latest advancements in AI.
+                  J'aime créer des solutions innovantes qui résolvent des problèmes concrets. Mon objectif est de 
+                  contribuer à des projets ambitieux qui ont un impact positif sur la société.
+                </p>
+                <p>
+                  Toujours curieux d'apprendre, je reste à l'affût des dernières tendances technologiques et 
+                  j'apprécie particulièrement les défis techniques complexes qui me permettent de repousser mes limites.
                 </p>
               </motion.div>
             </div>

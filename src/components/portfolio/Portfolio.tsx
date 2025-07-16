@@ -16,7 +16,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'projects', 'education', 'certifications', 'experience', 'languages', 'contact'];
+      const sections = ['about', 'internships', 'projects', 'education', 'certifications', 'experience', 'languages', 'contact'];
       
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -38,7 +38,7 @@ export default function Portfolio() {
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <div className="min-h-screen bg-portfolio-bg">
         <Header activeSection={activeSection} />
-        <main>
+        <main role="main" aria-label="Contenu principal du portfolio">
           <AboutSection />
           <InternshipSection />
           <ProjectsSection />
