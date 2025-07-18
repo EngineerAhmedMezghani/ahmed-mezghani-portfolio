@@ -3,23 +3,35 @@ import { Users, Trophy } from 'lucide-react';
 
 export default function ExperienceSection() {
   const experiences = [
-    {
-      icon: <Users className="h-6 w-6" />,
-      title: "Media Member",
-      organization: "PYFAC-X",
-      description: "Active member of the media team, contributing to content creation and community engagement.",
-      type: "Organization",
-      period: "2023 - Present"
-    },
-    {
-      icon: <Trophy className="h-6 w-6" />,
-      title: "Participant",
-      organization: "Hello World 5.0",
-      description: "Participated in competitive programming competition, demonstrating problem-solving skills and algorithmic thinking.",
-      type: "Competition",
-      period: "2024"
-    }
-  ];
+      {
+        id: 'media-pyfac-x',
+        icon: <Users className="h-6 w-6" />,
+        title: "Media Member",
+        organization: "PYFAC-X",
+        description: "Contributed to visual media content and community engagement for the career-focused tech event.",
+        type: "Organization",
+        period: "2024"
+      },
+      {
+        id: 'media-pyfac-xi',
+        icon: <Users className="h-6 w-6" />,
+        title: "Media Member",
+        organization: "PYFAC-XI",
+        description: "Continued as a media team member in the next edition, enhancing content quality and outreach strategies.",
+        type: "Organization",
+        period: "2025"
+      },
+      {
+        id: 'participant-helloworld',
+        icon: <Trophy className="h-6 w-6" />,
+        title: "Participant",
+        organization: "Hello World 5.0",
+        description: "Participated in a competitive programming challenge, demonstrating strong algorithmic thinking.",
+        type: "Competition",
+        period: "2024"
+      }
+    ];
+
 
   return (
     <section id="experience" className="portfolio-section bg-gradient-to-b from-portfolio-bg to-muted/20">
@@ -30,8 +42,9 @@ export default function ExperienceSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold portfolio-gradient-text text-center mb-12"
+          <motion.h2
+            // Applied consistent styling: removed gradient, added solid color, font smoothing, and extrabold
+            className="text-4xl md:text-5xl font-extrabold text-portfolio-accent text-center mb-12 antialiased subpixel-antialiased"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -39,12 +52,12 @@ export default function ExperienceSection() {
           >
             Experience
           </motion.h2>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {experiences.map((experience, index) => (
                 <motion.div
-                  key={experience.title}
+                  key={experience.id} // Use the unique id as the key
                   className="portfolio-card"
                   initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}

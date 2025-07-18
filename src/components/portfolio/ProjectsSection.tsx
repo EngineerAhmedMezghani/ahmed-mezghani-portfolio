@@ -10,7 +10,8 @@ export default function ProjectsSection() {
       objectives: "Créer une plateforme mobile accessible pour démocratiser l'achat de matériel informatique",
       challenges: "Optimisation des performances pour les appareils bas de gamme, synchronisation des données offline/online",
       features: ["Catalogue de produits filtrable", "Système de panier", "Authentification sécurisée", "Notifications push", "Mode hors ligne"],
-      image: "/api/placeholder/400/300",
+      // Corrected image path to be relative to the public folder
+      image: "/images/android-app.png",
       category: "Développement Mobile",
       github: "https://github.com/ahmed-mezghani/hardware-store-android",
       demo: null
@@ -22,7 +23,7 @@ export default function ProjectsSection() {
       objectives: "Fournir des insights précis et automatisés pour l'analyse tactique sportive",
       challenges: "Détection précise des joueurs en mouvement, gestion des occlusions, traitement temps réel",
       features: ["Détection de joueurs", "Suivi de trajectoires", "Calcul de statistiques", "Heatmaps de positions", "Export de rapports"],
-      image: "/api/placeholder/400/300",
+      image: "images/computer-vision.png",
       category: "Intelligence Artificielle",
       github: "https://github.com/ahmed-mezghani/football-analysis-cv",
       demo: "https://football-analysis-demo.com"
@@ -34,7 +35,7 @@ export default function ProjectsSection() {
       objectives: "Simplifier la réservation d'événements avec une expérience utilisateur optimale",
       challenges: "Gestion de la concurrence pour les réservations, intégration sécurisée des paiements",
       features: ["Calendrier interactif", "Réservation temps réel", "Paiement sécurisé", "Dashboard admin", "Notifications email"],
-      image: "/api/placeholder/400/300",
+      image: "images/event-reservation.png",
       category: "Développement Web",
       github: "https://github.com/ahmed-mezghani/event-reservation",
       demo: "https://event-reservation-demo.com"
@@ -62,8 +63,9 @@ export default function ProjectsSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold portfolio-gradient-text text-center mb-12"
+          <motion.h2
+            // Removed portfolio-gradient-text and added text-portfolio-accent for a solid color
+            className="text-4xl md:text-5xl font-extrabold text-portfolio-accent text-center mb-12 antialiased subpixel-antialiased"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -71,7 +73,7 @@ export default function ProjectsSection() {
           >
             Mes Projets
           </motion.h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <motion.div
@@ -83,8 +85,8 @@ export default function ProjectsSection() {
                 viewport={{ once: true }}
               >
                 <div className="relative overflow-hidden rounded-lg mb-6">
-                  <img 
-                    src={project.image} 
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                   />
@@ -125,18 +127,18 @@ export default function ProjectsSection() {
                     </span>
                   </div>
                 </div>
-                
+
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold text-portfolio-text group-hover:text-portfolio-accent transition-colors">
                     {project.title}
                   </h3>
-                  
+
                   <div className="space-y-3">
                     <div>
                       <h4 className="text-sm font-semibold text-portfolio-accent mb-2">Technologies utilisées :</h4>
                       <div className="flex flex-wrap gap-2">
                         {project.tech.map((tech, techIndex) => (
-                          <span 
+                          <span
                             key={techIndex}
                             className="px-2 py-1 bg-secondary text-secondary-foreground text-xs rounded-md font-medium"
                           >
@@ -145,23 +147,23 @@ export default function ProjectsSection() {
                         ))}
                       </div>
                     </div>
-                    
+
                     <p className="text-portfolio-text-muted leading-relaxed text-sm">
                       {project.description}
                     </p>
-                    
+
                     <div className="space-y-2">
                       <div>
                         <span className="text-xs font-semibold text-portfolio-accent">Objectif :</span>
                         <p className="text-xs text-portfolio-text-muted mt-1">{project.objectives}</p>
                       </div>
-                      
+
                       <div>
                         <span className="text-xs font-semibold text-portfolio-accent">Défis techniques :</span>
                         <p className="text-xs text-portfolio-text-muted mt-1">{project.challenges}</p>
                       </div>
                     </div>
-                    
+
                     <div>
                       <span className="text-xs font-semibold text-portfolio-accent">Fonctionnalités clés :</span>
                       <ul className="mt-1 space-y-1">
@@ -173,7 +175,7 @@ export default function ProjectsSection() {
                         ))}
                       </ul>
                     </div>
-                    
+
                     <div className="flex gap-3 pt-2">
                       {project.github && (
                         <a

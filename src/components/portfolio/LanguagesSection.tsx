@@ -35,8 +35,9 @@ export default function LanguagesSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold portfolio-gradient-text text-center mb-12"
+          <motion.h2
+            // Applied consistent styling: removed gradient, added solid color, font smoothing, and extrabold
+            className="text-4xl md:text-5xl font-extrabold text-portfolio-accent text-center mb-12 antialiased subpixel-antialiased"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -44,7 +45,7 @@ export default function LanguagesSection() {
           >
             Languages
           </motion.h2>
-          
+
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {languages.map((language, index) => (
@@ -65,7 +66,7 @@ export default function LanguagesSection() {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div>
                       <h3 className="text-xl font-semibold text-portfolio-text mb-1">
                         {language.name}
@@ -74,7 +75,7 @@ export default function LanguagesSection() {
                         {language.level}
                       </p>
                     </div>
-                    
+
                     <div className="space-y-2">
                       <div className="flex justify-center">
                         <div className="flex gap-1">
@@ -90,7 +91,7 @@ export default function LanguagesSection() {
                           ))}
                         </div>
                       </div>
-                      
+
                       <div className="w-full bg-muted rounded-full h-2">
                         <motion.div
                           className="bg-gradient-to-r from-portfolio-accent to-primary-glow h-2 rounded-full"
@@ -101,7 +102,7 @@ export default function LanguagesSection() {
                         />
                       </div>
                     </div>
-                    
+
                     <p className="text-sm text-portfolio-text-muted leading-relaxed">
                       {language.description}
                     </p>

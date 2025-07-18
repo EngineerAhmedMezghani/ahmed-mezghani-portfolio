@@ -28,15 +28,16 @@ export default function InternshipSection() {
   return (
     <section id="internships" className="portfolio-section bg-gradient-to-b from-portfolio-bg to-muted/20">
       <div className="portfolio-container">
-        <motion.div 
+        <motion.div
           className="text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold portfolio-gradient-text mb-8"
+          <motion.h2
+            // Removed portfolio-gradient-text and added text-portfolio-accent for a solid color
+            className="text-4xl md:text-5xl font-bold text-portfolio-accent mb-8 antialiased subpixel-antialiased"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -44,8 +45,8 @@ export default function InternshipSection() {
           >
             Stage en Computer Vision
           </motion.h2>
-          
-          <motion.div 
+
+          <motion.div
             className="portfolio-card mb-8"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -58,9 +59,9 @@ export default function InternshipSection() {
               </p>
               <p>
                 💼 Je suis actuellement stagiaire chez{' '}
-                <a 
-                  href="https://www.visshopai.com/" 
-                  target="_blank" 
+                <a
+                  href="https://www.visshopai.com/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="font-semibold text-portfolio-accent hover:text-portfolio-accent-hover transition-colors inline-flex items-center gap-1"
                   aria-label="Site web de VisShop AI (ouvre dans un nouvel onglet)"

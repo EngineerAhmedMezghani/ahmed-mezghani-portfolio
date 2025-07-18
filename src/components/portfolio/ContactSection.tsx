@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Send, Github, Linkedin, Download, Phone, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
-import emailjs from '@emailjs/browser';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -27,34 +26,53 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
-        'service_id', // You'll need to set this up with EmailJS
-        'template_id', // You'll need to set this up with EmailJS
-        formData,
-        'RmLkXHmpGPS04bGhB'
-      );
+      const response = await fetch('http://localhost:3001/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: 'ahmed.mezghani@enis.tn', // 👈 Replace with your own email address
+          subject: `[Portfolio Contact] ${formData.subject}`,
+          html: `
+            <div style="font-family: Arial, sans-serif;">
+              <h3>Message de: ${formData.name}</h3>
+              <p><strong>Email:</strong> ${formData.email}</p>
+              <p><strong>Message:</strong></p>
+              <div>${formData.message}</div>
+            </div>
+          `,
+          text: `
+            From: ${formData.name}
+            Email: ${formData.email}
+            Subject: ${formData.subject}
+
+            ${formData.message}
+          `
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Erreur lors de l’envoi de l’e-mail');
+      }
 
       toast({
-        title: "Message envoyé avec succès !",
-        description: "Merci pour votre message. Je vous répondrai rapidement.",
+        title: 'Succès',
+        description: 'Message envoyé avec succès !',
       });
-
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
+      console.error(error);
       toast({
-        title: "Erreur lors de l'envoi",
-        description: "Veuillez réessayer plus tard ou me contacter directement.",
-        variant: "destructive",
+        title: 'Erreur',
+        description: 'Une erreur est survenue. Veuillez réessayer.',
+        variant: 'destructive'
       });
     } finally {
       setIsSubmitting(false);
     }
   };
+
 
   const contactLinks = [
     {
@@ -200,7 +218,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <p className="text-portfolio-text-muted">Email</p>
-                      <p className="text-portfolio-text">ahmed.mezghani@example.com</p>
+                      <p className="text-portfolio-text">ahmed.mezghani@enis.tn</p>
                     </div>
                   </div>
                   
@@ -210,7 +228,7 @@ export default function ContactSection() {
                     </div>
                     <div>
                       <p className="text-portfolio-text-muted">Téléphone</p>
-                      <p className="text-portfolio-text">+216 XX XXX XXX</p>
+                      <p className="text-portfolio-text">+216 26 730 531 </p>
                     </div>
                   </div>
                   

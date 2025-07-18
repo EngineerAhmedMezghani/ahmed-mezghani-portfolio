@@ -16,10 +16,7 @@ export default function Footer() {
         >
           <div className="flex items-center justify-center gap-2 text-portfolio-text-muted">
             <span>&copy; {currentYear} Ahmed Mezghani. All rights reserved.</span>
-            <span className="hidden sm:inline">•</span>
-            <span className="hidden sm:inline flex items-center gap-1">
-              Made with <Heart className="h-4 w-4 text-red-500 fill-current" /> using React & Tailwind
-            </span>
+            
           </div>
         </motion.div>
       </div>

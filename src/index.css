@@ -4,86 +4,88 @@
 
 @layer base {
   :root {
-    --background: 247 247 247; /* Light gray instead of pure white */
-    --foreground: 23 23 23;
-    --card: 255 255 255;
-    --card-foreground: 23 23 23;
-    --popover: 255 255 255;
-    --popover-foreground: 23 23 23;
-    --primary: 59 130 246; /* Blue primary color */
-    --primary-foreground: 255 255 255;
-    --primary-glow: 147 197 253; /* Lighter blue for accents */
-    --secondary: 248 250 252;
-    --secondary-foreground: 30 41 59;
-    --muted: 241 245 249;
-    --muted-foreground: 100 116 139;
-    --accent: 239 246 255;
-    --accent-foreground: 30 64 175;
-    --destructive: 239 68 68;
-    --destructive-foreground: 255 255 255;
-    --border: 226 232 240;
-    --input: 226 232 240;
-    --ring: 59 130 246;
+    /* Light Theme - White background, Black text, Vibrant Blue accent */
+    --background: 0 0% 100%; /* White */
+    --foreground: 0 0% 0%; /* Black */
+    --card: 0 0% 100%; /* Pure white cards */
+    --card-foreground: 0 0% 0%; /* Black text on cards */
+    --popover: 0 0% 100%; /* Pure white popovers */
+    --popover-foreground: 0 0% 0%; /* Black text on popovers */
+    --primary: 210 100% 50%; /* Vibrant Blue (RGB 0, 128, 255) */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --primary-glow: 210 100% 70%; /* Lighter blue for glow effect */
+    --secondary: 0 0% 95%; /* Very light gray for secondary elements */
+    --secondary-foreground: 0 0% 15%; /* Dark gray for secondary text */
+    --muted: 0 0% 90%; /* Light gray for muted backgrounds */
+    --muted-foreground: 0 0% 40%; /* Medium gray for muted text */
+    --accent: 210 100% 90%; /* Very light blue accent */
+    --accent-foreground: 210 100% 30%; /* Darker blue for accent text */
+    --destructive: 0 80% 60%; /* Bright red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White text on destructive */
+    --border: 0 0% 85%; /* Light gray border */
+    --input: 0 0% 85%; /* Light gray input border */
+    --ring: 210 100% 50%; /* Ring color matches primary */
     --radius: 0.75rem;
-    
-    /* Portfolio specific colors */
-    --portfolio-bg: 247 247 247; /* Light gray background */
-    --portfolio-card: 255 255 255;
-    --portfolio-text: 15 23 42;
-    --portfolio-text-muted: 71 85 105;
-    --portfolio-accent: 59 130 246;
-    --portfolio-accent-hover: 37 99 235;
-    
-    /* Sidebar colors */
-    --sidebar-background: 255 255 255;
-    --sidebar-foreground: 23 23 23;
-    --sidebar-primary: 59 130 246;
-    --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 239 246 255;
-    --sidebar-accent-foreground: 30 64 175;
-    --sidebar-border: 226 232 240;
-    --sidebar-ring: 59 130 246;
+
+    /* Portfolio specific colors (Light Theme) */
+    --portfolio-bg: 0 0% 100%; /* Matches background */
+    --portfolio-card: 0 0% 100%; /* Matches card */
+    --portfolio-text: 0 0% 0%; /* Matches foreground */
+    --portfolio-text-muted: 0 0% 40%; /* Matches muted-foreground */
+    --portfolio-accent: 210 100% 50%; /* Matches primary */
+    --portfolio-accent-hover: 210 100% 40%; /* Slightly darker blue on hover */
+
+    /* Sidebar colors (Light Theme) */
+    --sidebar-background: 0 0% 100%; /* White sidebar */
+    --sidebar-foreground: 0 0% 0%; /* Black text */
+    --sidebar-primary: 210 100% 50%; /* Blue primary */
+    --sidebar-primary-foreground: 0 0% 100%; /* White text */
+    --sidebar-accent: 210 100% 90%; /* Light blue accent */
+    --sidebar-accent-foreground: 210 100% 30%; /* Darker blue text */
+    --sidebar-border: 0 0% 85%; /* Light gray border */
+    --sidebar-ring: 210 100% 50%; /* Blue ring */
   }
 
   .dark {
-    --background: 15 23 42;
-    --foreground: 248 250 252;
-    --card: 30 41 59;
-    --card-foreground: 248 250 252;
-    --popover: 30 41 59;
-    --popover-foreground: 248 250 252;
-    --primary: 96 165 250;
-    --primary-foreground: 15 23 42;
-    --primary-glow: 59 130 246;
-    --secondary: 51 65 85;
-    --secondary-foreground: 248 250 252;
-    --muted: 51 65 85;
-    --muted-foreground: 148 163 184;
-    --accent: 51 65 85;
-    --accent-foreground: 248 250 252;
-    --destructive: 220 38 38;
-    --destructive-foreground: 248 250 252;
-    --border: 51 65 85;
-    --input: 51 65 85;
-    --ring: 96 165 250;
-    
+    /* Dark Theme - Dark background, Light text, Muted Blue accent */
+    --background: 210 10% 10%; /* Very dark blue-gray */
+    --foreground: 0 0% 90%; /* Light gray */
+    --card: 210 10% 15%; /* Darker blue-gray cards */
+    --card-foreground: 0 0% 90%; /* Light gray text on cards */
+    --popover: 210 10% 15%; /* Darker blue-gray popovers */
+    --popover-foreground: 0 0% 90%; /* Light gray text on popovers */
+    --primary: 210 80% 60%; /* Muted blue for dark mode primary */
+    --primary-foreground: 210 10% 10%; /* Dark text on primary */
+    --primary-glow: 210 80% 50%; /* Slightly darker muted blue glow */
+    --secondary: 210 10% 25%; /* Darker secondary background */
+    --secondary-foreground: 0 0% 90%; /* Light text on secondary */
+    --muted: 210 10% 20%; /* Darker muted background */
+    --muted-foreground: 0 0% 60%; /* Medium light gray for muted text */
+    --accent: 210 80% 35%; /* Darker accent */
+    --accent-foreground: 0 0% 90%; /* Light text on accent */
+    --destructive: 0 70% 50%; /* Darker red */
+    --destructive-foreground: 0 0% 90%; /* Light text on destructive */
+    --border: 210 10% 25%; /* Dark border */
+    --input: 210 10% 25%; /* Dark input border */
+    --ring: 210 80% 60%; /* Ring color matches primary */
+
     /* Portfolio dark theme */
-    --portfolio-bg: 15 23 42;
-    --portfolio-card: 30 41 59;
-    --portfolio-text: 248 250 252;
-    --portfolio-text-muted: 148 163 184;
-    --portfolio-accent: 96 165 250;
-    --portfolio-accent-hover: 59 130 246;
-    
+    --portfolio-bg: 210 10% 10%; /* Matches background */
+    --portfolio-card: 210 10% 15%; /* Matches card */
+    --portfolio-text: 0 0% 90%; /* Matches foreground */
+    --portfolio-text-muted: 0 0% 60%; /* Matches muted-foreground */
+    --portfolio-accent: 210 80% 60%; /* Matches primary */
+    --portfolio-accent-hover: 210 80% 50%; /* Slightly darker primary on hover */
+
     /* Sidebar dark colors */
-    --sidebar-background: 30 41 59;
-    --sidebar-foreground: 248 250 252;
-    --sidebar-primary: 96 165 250;
-    --sidebar-primary-foreground: 15 23 42;
-    --sidebar-accent: 51 65 85;
-    --sidebar-accent-foreground: 248 250 252;
-    --sidebar-border: 51 65 85;
-    --sidebar-ring: 96 165 250;
+    --sidebar-background: 210 10% 15%; /* Darker sidebar */
+    --sidebar-foreground: 0 0% 90%; /* Light text */
+    --sidebar-primary: 210 80% 60%; /* Muted blue primary */
+    --sidebar-primary-foreground: 210 10% 10%; /* Dark text */
+    --sidebar-accent: 210 80% 35%; /* Darker accent */
+    --sidebar-accent-foreground: 0 0% 90%; /* Light text */
+    --sidebar-border: 210 10% 25%; /* Dark border */
+    --sidebar-ring: 210 80% 60%; /* Muted blue ring */
   }
 }
 
@@ -94,6 +96,8 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    /* Ensure you import your chosen fonts here, e.g.: */
+    /* font-family: 'Montserrat', sans-serif; */
   }
 }
 
@@ -102,32 +106,36 @@
   .portfolio-section {
     @apply py-20 px-4 md:px-6 lg:px-8;
   }
-  
+
   .portfolio-section:nth-child(even) {
     @apply bg-secondary/30;
   }
-  
+
   .portfolio-container {
     @apply max-w-7xl mx-auto;
   }
-  
+
   .portfolio-card {
     @apply bg-portfolio-card border border-border rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6;
   }
-  
+
   .portfolio-gradient-text {
+    /* Updated gradient to use the new primary and primary-glow colors */
     @apply bg-gradient-to-r from-portfolio-accent to-primary-glow bg-clip-text text-transparent;
   }
-  
+
   .portfolio-button {
+    /* Updated button to use the new accent colors */
     @apply bg-portfolio-accent hover:bg-portfolio-accent-hover text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
   }
-  
+
   .portfolio-button-outline {
+    /* Updated outline button */
     @apply border-2 border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
   }
-  
+
   .portfolio-nav-link {
+    /* Updated nav link colors */
     @apply text-portfolio-text hover:text-portfolio-accent transition-colors duration-200 font-medium;
   }
 }
