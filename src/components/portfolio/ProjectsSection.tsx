@@ -51,7 +51,20 @@ export default function ProjectsSection() {
       category: "Développement Web",
       github: "https://github.com/ahmed-mezghani/portfolio",
       demo: "https://ahmed-mezghani.dev"
-    }
+    },
+    {
+  title: "Portfolio Website",
+  tech: ["HTML", "CSS", "JavaScript", "EmailJS", "AI Chatbot"],
+  description: "Personal portfolio with contact form, AI chatbot, and responsive design.",
+  objectives: "Provide a modern platform to showcase my skills and contact me directly.",
+  challenges: "Integrated automatic email sending and real-time chatbot.",
+  features: ["Responsive UI", "AI Chatbot", "Email Integration", "Interactive Navigation"],
+  image: "/images/portfolio-site.png",
+  category: "Web Development",
+  github: "https://github.com/ahmed-mezghani/portfolio",
+  demo: "https://ahmed-mezghani.dev"
+}
+
   ];
 
   return (

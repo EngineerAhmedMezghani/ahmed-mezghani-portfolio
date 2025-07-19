@@ -2,26 +2,27 @@ import { motion } from 'framer-motion';
 import { Award, ExternalLink, FileText } from 'lucide-react';
 
 export default function CertificationsSection() {
-  const certifications = [
-    {
-      title: "Data Science Introduction",
-      provider: "365 Data Science",
-      description: "Completed an introduction to data science, covering key concepts and practical skills.",
-      certificateUrl: "/api/placeholder/certificate/data-science-intro.pdf",
-      skills: ["Data Analysis", "Statistical Methods", "Data Visualization", "Python Basics"],
-      issueDate: "2024",
-      logo: "/api/placeholder/100/100"
-    },
-    {
-      title: "Python Data Associate",
-      provider: "DataCamp",
-      description: "Advanced certification in Python programming for data science applications.",
-      certificateUrl: "/api/placeholder/certificate/python-data-associate.pdf",
-      skills: ["Python Programming", "Data Manipulation", "Pandas", "NumPy", "Data Visualization"],
-      issueDate: "2024",
-      logo: "/api/placeholder/100/100"
-    }
-  ];
+const certifications = [
+  {
+    title: "Introduction to Data and Data Science",
+    provider: "365 Data Science",
+    description: "Fundamentals of data types, collection, cleaning, analysis, and visualization.",
+    certificateUrl: "/api/placeholder/certificate/data-science-intro.pdf",
+    skills: ["Data Lifecycle", "Visualization", "Cleaning", "Data Types"],
+    issueDate: "2024",
+    logo: "/api/placeholder/100/100"
+  },
+  {
+    title: "Python Data Associate",
+    provider: "DataCamp",
+    description: "Exploratory data analysis with NumPy, pandas, Matplotlib, and Seaborn.",
+    certificateUrl: "/api/placeholder/certificate/python-data-associate.pdf",
+    skills: ["Python", "pandas", "NumPy", "EDA", "Data Visualization"],
+    issueDate: "2024",
+    logo: "/api/placeholder/100/100"
+  }
+];
+
 
   const openCertificate = (url: string) => {
     window.open(url, '_blank');

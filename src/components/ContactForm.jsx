@@ -30,7 +30,7 @@ function ContactForm() {
         setStatus('Sending...'); // Set status to indicate that the email is being sent
 
         try {
-            const response = await fetch('http://localhost:3001/send-email', {
+            const response = await fetch("https://email-sender-api-54o3.onrender.com/send-email", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
