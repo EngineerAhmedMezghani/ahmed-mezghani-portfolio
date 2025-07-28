@@ -13,7 +13,7 @@ export default function ProjectsSection() {
       // Corrected image path to be relative to the public folder
       image: "/images/android-app.png",
       category: "Développement Mobile",
-      github: "https://github.com/ahmed-mezghani/hardware-store-android",
+      github: "https://github.com/EngineerAhmedMezghani/MyApplication8final/tree/main",
       demo: null
     },
     {
@@ -24,9 +24,9 @@ export default function ProjectsSection() {
       challenges: "Détection précise des joueurs en mouvement, gestion des occlusions, traitement temps réel",
       features: ["Détection de joueurs", "Suivi de trajectoires", "Calcul de statistiques", "Heatmaps de positions", "Export de rapports"],
       image: "images/computer-vision.png",
-      category: "Intelligence Artificielle",
-      github: "https://github.com/ahmed-mezghani/football-analysis-cv",
-      demo: "https://football-analysis-demo.com"
+      category: "AI - Computer Vision",
+      github: "https://github.com/EngineerAhmedMezghani/computer-vision-project-2",
+      //demo: "https://football-analysis-demo.com"
     },
     {
       title: "Système de Réservation d'Événements",
@@ -38,32 +38,40 @@ export default function ProjectsSection() {
       image: "images/event-reservation.png",
       category: "Développement Web",
       github: "https://github.com/ahmed-mezghani/event-reservation",
-      demo: "https://event-reservation-demo.com"
+      //demo: "https://event-reservation-demo.com"
     },
     {
       title: "Portfolio Personnel Interactif",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion","AI Chatbot", "Email Automation"],
       description: "Site web portfolio personnel moderne avec animations fluides et design responsive. Optimisé pour les performances et l'accessibilité, intégrant un système de thèmes sombre/clair et des micro-interactions engageantes.",
       objectives: "Créer une vitrine professionnelle reflétant mes compétences techniques et créatives",
       challenges: "Optimisation des performances, accessibilité totale, design cohérent multi-devices",
       features: ["Design responsive", "Mode sombre/clair", "Animations CSS", "SEO optimisé", "Performance optimisée"],
-      image: "/api/placeholder/400/300",
-      category: "Développement Web",
+      image: "public/images/Portfolio.png",
+      category: "Full-Stack Développement Web",
       github: "https://github.com/ahmed-mezghani/portfolio",
       demo: "https://ahmed-mezghani.dev"
     },
     {
-  title: "Portfolio Website",
-  tech: ["HTML", "CSS", "JavaScript", "EmailJS", "AI Chatbot"],
-  description: "Personal portfolio with contact form, AI chatbot, and responsive design.",
-  objectives: "Provide a modern platform to showcase my skills and contact me directly.",
-  challenges: "Integrated automatic email sending and real-time chatbot.",
-  features: ["Responsive UI", "AI Chatbot", "Email Integration", "Interactive Navigation"],
-  image: "/images/portfolio-site.png",
-  category: "Web Development",
-  github: "https://github.com/ahmed-mezghani/portfolio",
-  demo: "https://ahmed-mezghani.dev"
-}
+    title: "VisioTrack – Surveillance de Capacité en Temps Réel",
+    tech: ["Python", "YOLOv8", "DeepSORT", "FastAPI", "React.js", "PostgreSQL", "Plotly.js", "Tailwind CSS"],
+    description: "VisioTrack est une solution intelligente basée sur la vision par ordinateur pour surveiller en temps réel l’affluence humaine dans des zones critiques d’un magasin. Elle combine IA, traitement vidéo et visualisation de données pour améliorer la sécurité, la fluidité et la performance commerciale.",
+    objectives: "Assurer la conformité aux normes de sécurité, optimiser les flux clients et améliorer l'expérience d'achat.",
+    challenges: "Précision du comptage dans des environnements encombrés, suivi multi-objet fiable, temps réel et visualisation claire.",
+    features: [
+      "Comptage intelligent avec YOLOv8 + DeepSORT",
+      "Détection automatique des goulots d’étranglement",
+      "Dashboard interactif (heatmaps, pics, alertes en temps réel)",
+      "Définition manuelle des zones ROI avec calcul de capacité",
+      "Système d’alertes (email, SMS, visual)"
+    ],
+    image: "/images/visiotrack-dashboard.png", // remplace par le bon chemin de ton image si différent
+    category: "AI - Computer Vision",
+    github: "https://github.com/ahmed-mezghani/visiotrack", // remplace si tu as un autre lien
+    demo: null // ajoute un lien de démo si disponible
+  },
+
+    
 
   ];
 

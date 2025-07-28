@@ -7,7 +7,7 @@ const express = require('express'); // Express.js for creating the server
 const nodemailer = require('nodemailer'); // Nodemailer for sending emails
 const dotenv = require('dotenv'); // dotenv for loading environment variables from a .env file
 const cors = require('cors'); // CORS for handling cross-origin requests from your frontend
-
+//app.use(cors()); // Enable CORS for all origins
 // Load environment variables from .env file.
 // This reads your EMAIL_HOST, EMAIL_PORT, etc., from the .env file in this directory.
 dotenv.config();

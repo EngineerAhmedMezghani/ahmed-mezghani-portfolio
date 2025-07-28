@@ -77,7 +77,7 @@ export default function ContactSection() {
   const contactLinks = [
     {
       name: "GitHub",
-      href: "https://github.com/IngAhmedMezghani",
+      href: "https://github.com/EngineerAhmedMezghani",
       icon: <Github className="h-5 w-5" />,
       color: "hover:text-gray-900 dark:hover:text-gray-100"
     },
@@ -89,7 +89,7 @@ export default function ContactSection() {
     },
     {
       name: "Télécharger CV",
-      href: "/api/placeholder/cv/Ahmed_Mezghani_eng.pdf",
+      href: "/src/assets/Ahmed-Mezghani.pdf",
       icon: <Download className="h-5 w-5" />,
       color: "hover:text-green-600",
       download: true

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ThemeProvider } from 'next-themes';
 import Header from './Header';
+import WelcomeSection from './WelcomeSection';  // << Import your new component here
 import AboutSection from './AboutSection';
 import InternshipSection from './InternshipSection';
 import ProjectsSection from './ProjectsSection';
@@ -16,7 +17,17 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'internships', 'projects', 'education', 'certifications', 'experience', 'languages', 'contact'];
+      const sections = [
+        'welcome',          // << add your welcome section id here for active highlight
+        'about',
+        'internships',
+        'projects',
+        'education',
+        'certifications',
+        'experience',
+        'languages',
+        'contact'
+      ];
       
       for (const section of sections) {
         const element = document.getElementById(section);
@@ -39,6 +50,7 @@ export default function Portfolio() {
       <div className="min-h-screen bg-portfolio-bg">
         <Header activeSection={activeSection} />
         <main role="main" aria-label="Contenu principal du portfolio">
+          <WelcomeSection />       {/* <<< Add here */}
           <AboutSection />
           <InternshipSection />
           <ProjectsSection />

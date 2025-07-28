@@ -60,7 +60,7 @@ export default function Header({ activeSection }: HeaderProps) {
               Ahmed Mezghani
             </h1>
             <p className="text-sm text-muted-foreground hidden sm:block">
-              Futur Ingénieur Logiciel & Étudiant en Informatique
+                Futur Computer Science Engineer
             </p>
           </motion.div>
 
