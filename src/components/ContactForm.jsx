@@ -26,61 +26,49 @@ function ContactForm() {
 
     // Handle form submission
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent default form submission behavior (page reload)
-        setStatus('Sending...'); // Set status to indicate that the email is being sent
+    e.preventDefault();
+    setStatus('Sending...');
 
-        try {
-            const response = await fetch("https://email-sender-api-54o3.onrender.com/send-email", {
+    try {
+        const response = await fetch('https://email-sender-api-1-haj5.onrender.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-        to: 'ahmed.mezghani@enis.tn',
-        subject: `[Portfolio Contact] ${formData.subject}`,
-        html: `
-            <div style="font-family: Arial, sans-serif; max-width: 600px;">
-                <h2>New Portfolio Contact Message</h2>
-                <p><strong>Name:</strong> ${formData.name}</p>
-                <p><strong>Email:</strong> ${formData.senderEmail}</p>
-                <p><strong>Subject:</strong> ${formData.subject}</p>
-                <hr />
-                <div>${formData.message}</div>
-            </div>
-        `,
-        text: `
-            From: ${formData.name}
-            Email: ${formData.senderEmail}
-            Subject: ${formData.subject}
-            
-            ${formData.message}
-        `
-    })
-});
+            },
+            body: JSON.stringify({
+                to: 'ahmed.mezghani@enis.tn',
+                subject: `[Portfolio Contact] ${formData.subject}`,
+                message: `
+                    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                        <h2>New Portfolio Contact Message</h2>
+                        <p><strong>From:</strong> ${formData.name}</p>
+                        <p><strong>Email:</strong> ${formData.senderEmail}</p>
+                        <p><strong>Subject:</strong> ${formData.subject}</p>
+                        <hr style="border: 1px solid #eee;">
+                        <div style="white-space: pre-wrap;">${formData.message}</div>
+                    </div>
+                `
+            })
+        });
 
+        const data = await response.json();
 
-            const data = await response.json();
-
-            if (response.ok) {
-                setStatus('Message sent successfully! ✅');
-                // Clear the form fields after successful submission for a clean state.
-                setFormData({ name: '', senderEmail: '', subject: '', message: '' });
-                // Clear success message after 5 seconds
-                setTimeout(() => setStatus(''), 5000);
-            } else {
-                throw new Error(data.message || 'Failed to send message');
-            }
-        } catch (error) {
-            // Catch any network errors or other exceptions during the fetch operation.
-            console.error('Error:', error);
-            const errorMessage = error.message.includes('Failed to fetch') 
-                ? 'Unable to connect to email service. Please check your internet connection.'
-                : `Failed to send message: ${error.message}`;
-            setStatus(`${errorMessage} ❌`);
-            // Clear error message after 5 seconds
+        if (response.ok) {
+            setStatus('Message sent successfully! ✅');
+            setFormData({ name: '', senderEmail: '', subject: '', message: '' });
             setTimeout(() => setStatus(''), 5000);
+        } else {
+            throw new Error(data.message || 'Failed to send message');
         }
-    };
+    } catch (error) {
+        console.error('Error:', error);
+        const errorMessage = error.message.includes('Failed to fetch') 
+            ? 'Unable to connect to email service. Please check your internet connection.'
+            : `Failed to send message: ${error.message}`;
+        setStatus(`${errorMessage} ❌`);
+        setTimeout(() => setStatus(''), 5000);
+    }
+}
 
     return (
         <div className="max-w-md mx-auto p-6 bg-gray-100 rounded-lg shadow-md">
