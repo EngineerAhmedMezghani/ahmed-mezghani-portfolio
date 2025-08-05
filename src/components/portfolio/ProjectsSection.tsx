@@ -47,7 +47,7 @@ export default function ProjectsSection() {
       objectives: "Créer une vitrine professionnelle reflétant mes compétences techniques et créatives",
       challenges: "Optimisation des performances, accessibilité totale, design cohérent multi-devices",
       features: ["Design responsive", "Mode sombre/clair", "Animations CSS", "SEO optimisé", "Performance optimisée"],
-      image: "public/images/Portfolio.png",
+      image: "public\\images\\Portfolio.png",
       category: "Full-Stack Développement Web",
       github: "https://github.com/ahmed-mezghani/portfolio",
       demo: "https://ahmed-mezghani.dev"
@@ -65,7 +65,7 @@ export default function ProjectsSection() {
       "Définition manuelle des zones ROI avec calcul de capacité",
       "Système d’alertes (email, SMS, visual)"
     ],
-    image: "/images/visiotrack-dashboard.png", // remplace par le bon chemin de ton image si différent
+    image: "public/images/visiotrack-dashboard.png", // remplace par le bon chemin de ton image si différent
     category: "AI - Computer Vision",
     github: "https://github.com/ahmed-mezghani/visiotrack", // remplace si tu as un autre lien
     demo: null // ajoute un lien de démo si disponible
