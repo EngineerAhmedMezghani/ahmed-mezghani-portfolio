@@ -30,7 +30,7 @@ function ContactForm() {
     setStatus('Sending...');
 
     try {
-        const response = await fetch('https://email-sender-api-1-haj5.onrender.com', {
+        const response = await fetch('https://email-sender-api-1-haj5.onrender.com/send', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
