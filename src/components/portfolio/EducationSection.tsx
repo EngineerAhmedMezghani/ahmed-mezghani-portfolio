@@ -5,21 +5,21 @@ export default function EducationSection() {
   const educationItems = [
     {
       icon: <GraduationCap className="h-6 w-6" />,
-      title: "Baccalauréat en Mathématiques",
+      title: "High School Diploma in Mathematics",
       year: "2022",
-      description: "Diplômé avec mention en Mathématiques, établissant une base solide en pensée analytique et résolution de problèmes. Cette formation m'a permis de développer une rigueur scientifique essentielle pour l'informatique."
+      description: "Graduated with honors in Mathematics, establishing a solid foundation in analytical thinking and problem solving. This education helped me develop scientific rigor essential for computer science."
     },
     {
       icon: <Award className="h-6 w-6" />,
-      title: "Concours National d'Entrée aux Écoles d'Ingénieurs",
+      title: "National Engineering School Entrance Exam",
       year: "2024",
-      description: "Admis avec succès au concours national d'entrée aux écoles d'ingénieurs, démontrant l'excellence académique et la capacité à relever des défis intellectuels exigeants."
+      description: "Successfully admitted through the national entrance exam for engineering schools, demonstrating academic excellence and the ability to tackle demanding intellectual challenges."
     },
     {
       icon: <BookOpen className="h-6 w-6" />,
-      title: "Étudiant Ingénieur en Informatique - ENIS Sfax",
-      year: "2024 - Présent",
-      description: "Actuellement en cursus d'ingénieur en Informatique à l'École Nationale d'Ingénieurs de Sfax. Formation approfondie en algorithmes, structures de données, développement logiciel et intelligence artificielle."
+      title: "Computer Engineering Student - ENIS Sfax",
+      year: "2024 - Present",
+      description: "Currently pursuing an engineering degree in Computer Science at the National Engineering School of Sfax. In-depth training in algorithms, data structures, software development, and artificial intelligence."
     }
   ];
 
@@ -39,7 +39,7 @@ export default function EducationSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Formation
+            Education
           </motion.h2>
           
           <div className="max-w-4xl mx-auto">

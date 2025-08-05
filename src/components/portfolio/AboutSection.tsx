@@ -21,7 +21,7 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              À Propos de Moi
+              About Me 
             </motion.h2>
             <motion.div
               className="space-y-4 text-base md:text-lg text-portfolio-text-muted leading-relaxed"

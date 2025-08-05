@@ -72,7 +72,7 @@ function ContactForm() {
 
     return (
         <div className="max-w-md mx-auto p-6 bg-gray-100 rounded-lg shadow-md">
-            <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">Envoyez-moi un message</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center text-gray-800">Send me a message</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 {/* Sender's Name Input */}
                 <div>

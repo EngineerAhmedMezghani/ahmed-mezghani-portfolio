@@ -36,7 +36,7 @@ export default function ContactSection() {
           subject: `[Portfolio Contact] ${formData.subject}`,
           html: `
             <div style="font-family: Arial, sans-serif;">
-              <h3>Message de: ${formData.name}</h3>
+              <h3>Message from: ${formData.name}</h3>
               <p><strong>Email:</strong> ${formData.email}</p>
               <p><strong>Message:</strong></p>
               <div>${formData.message}</div>
@@ -53,19 +53,19 @@ export default function ContactSection() {
       });
 
       if (!response.ok) {
-        throw new Error('Erreur lors de l’envoi de l’e-mail');
+        throw new Error('Error sending email');
       }
 
       toast({
-        title: 'Succès',
-        description: 'Message envoyé avec succès !',
+        title: 'Success',
+        description: 'Message sent successfully!',
       });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error(error);
       toast({
-        title: 'Erreur',
-        description: 'Une erreur est survenue. Veuillez réessayer.',
+        title: 'Error',
+        description: 'An error occurred. Please try again.',
         variant: 'destructive'
       });
     } finally {
@@ -88,7 +88,7 @@ export default function ContactSection() {
       color: "hover:text-blue-600"
     },
     {
-      name: "Télécharger CV",
+      name: "Download CV",
       href: "/src/assets/Ahmed-Mezghani.pdf",
       icon: <Download className="h-5 w-5" />,
       color: "hover:text-green-600",
@@ -112,7 +112,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Me Contacter
+            Contact Me
           </motion.h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -126,7 +126,7 @@ export default function ContactSection() {
             >
               <div className="portfolio-card">
                 <h3 className="text-2xl font-semibold text-portfolio-text mb-6">
-                  Envoyez-moi un message
+                  Send me a message
                 </h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -136,7 +136,7 @@ export default function ContactSection() {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Votre nom"
+                      placeholder="Your name"
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors"
                     />
@@ -148,7 +148,7 @@ export default function ContactSection() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="Votre email"
+                      placeholder="Your email"
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors"
                     />
@@ -160,7 +160,7 @@ export default function ContactSection() {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      placeholder="Sujet"
+                      placeholder="Subject"
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors"
                     />
@@ -171,7 +171,7 @@ export default function ContactSection() {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Votre message"
+                      placeholder="Your message"
                       rows={5}
                       required
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors resize-none"
@@ -190,7 +190,7 @@ export default function ContactSection() {
                     ) : (
                       <>
                         <Send className="h-5 w-5" />
-                        Envoyer
+                        Send
                       </>
                     )}
                   </motion.button>
@@ -208,7 +208,7 @@ export default function ContactSection() {
             >
               <div className="portfolio-card">
                 <h3 className="text-2xl font-semibold text-portfolio-text mb-6">
-                  Informations de Contact
+                  Contact Information
                 </h3>
                 
                 <div className="space-y-4">
@@ -227,7 +227,7 @@ export default function ContactSection() {
                       <Phone className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-portfolio-text-muted">Téléphone</p>
+                      <p className="text-portfolio-text-muted">Phone</p>
                       <p className="text-portfolio-text">+216 26 730 531 </p>
                     </div>
                   </div>
@@ -237,8 +237,8 @@ export default function ContactSection() {
                       <MapPin className="h-5 w-5" />
                     </div>
                     <div>
-                      <p className="text-portfolio-text-muted">Localisation</p>
-                      <p className="text-portfolio-text">Sfax, Tunisie</p>
+                      <p className="text-portfolio-text-muted">Location</p>
+                      <p className="text-portfolio-text">Sfax, Tunisia</p>
                     </div>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ export default function ContactSection() {
               
               <div className="portfolio-card">
                 <h3 className="text-xl font-semibold text-portfolio-text mb-6">
-                  Connectez-vous avec moi
+                  Connect with me
                 </h3>
                 
                 <div className="flex flex-wrap gap-4">
