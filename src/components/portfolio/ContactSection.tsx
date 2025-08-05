@@ -26,7 +26,7 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://email-sender-api-1-haj5.onrender.com/send', {
+      const response = await fetch('https://email-sender-api-1-haj5.onrender.com/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
