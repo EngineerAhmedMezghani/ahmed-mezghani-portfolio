@@ -46,7 +46,7 @@ export default function ProjectsSection() {
       objectives: "Create a professional showcase reflecting my technical and creative skills",
       challenges: "Performance optimization, full accessibility, consistent multi-device design",
       features: ["Responsive design", "Dark/light mode", "CSS animations", "SEO optimized", "Performance optimized"],
-      image: "public\\images\\Portfolio.png",
+      image: "/images/Portfolio.png",
       category: "Full-Stack Web Development",
       github: "https://github.com/ahmed-mezghani/portfolio",
       demo: "https://ahmed-mezghani.dev"
@@ -64,7 +64,7 @@ export default function ProjectsSection() {
         "Manual ROI zone definition with capacity calculation",
         "Alert system (email, SMS, visual)"
       ],
-      image: "public/images/visiotrack-dashboard.png",
+      image: "/images/visiotrack-dashboard.png",
       category: "AI - Computer Vision",
       github: "https://github.com/ahmed-mezghani/visiotrack",
       demo: null
