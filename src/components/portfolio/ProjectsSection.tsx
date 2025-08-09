@@ -36,7 +36,7 @@ export default function ProjectsSection() {
       features: ["Interactive calendar", "Real-time booking", "Secure payment", "Admin dashboard", "Email notifications"],
       image: "images/event-reservation.png",
       category: "Web Development",
-      github: "https://github.com/ahmed-mezghani/event-reservation",
+      // github: "https://github.com/ahmed-mezghani/event-reservation",
       // demo: "https://event-reservation-demo.com"
     },
     {
@@ -48,8 +48,8 @@ export default function ProjectsSection() {
       features: ["Responsive design", "Dark/light mode", "CSS animations", "SEO optimized", "Performance optimized"],
       image: "/images/Portfolio.png",
       category: "Full-Stack Web Development",
-      github: "https://github.com/ahmed-mezghani/portfolio",
-      demo: "https://ahmed-mezghani.dev"
+      github: "https://github.com/EngineerAhmedMezghani/ahmed-mezghani-portfolio",
+      demo: "https://ahmed-mezghani-portfolio.vercel.app/"
     },
     {
       title: "VisioTrack – Real-Time Capacity Monitoring",
@@ -66,7 +66,7 @@ export default function ProjectsSection() {
       ],
       image: "/images/visiotrack-dashboard.png",
       category: "AI - Computer Vision",
-      github: "https://github.com/ahmed-mezghani/visiotrack",
+      github: null,
       demo: null
     },
   ];
