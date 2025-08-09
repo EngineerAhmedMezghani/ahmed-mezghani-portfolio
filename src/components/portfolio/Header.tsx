@@ -17,13 +17,13 @@ export default function Header({ activeSection }: HeaderProps) {
   }, []);
 
   const navigationItems = [
-    { label: 'À propos', href: '#about' },
-    { label: 'Stage', href: '#internships' },
-    { label: 'Projets', href: '#projects' },
-    { label: 'Formation', href: '#education' },
+    { label: 'About me', href: '#about' },
+    { label: 'Internship', href: '#internships' },
+    { label: 'Projects', href: '#projects' },
+    { label: 'Education', href: '#education' },
     { label: 'Certifications', href: '#certifications' },
-    { label: 'Expérience', href: '#experience' },
-    { label: 'Langues', href: '#languages' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'Languages', href: '#languages' },
     { label: 'Contact', href: '#contact' },
   ];
 
