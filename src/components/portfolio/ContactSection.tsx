@@ -89,7 +89,7 @@ export default function ContactSection() {
     },
     {
       name: "Download CV",
-      href: "src/assets/Ahmed-Mezghani.pdf",
+      href: "public/images/Ahmed-Mezghani.pdf",
       icon: <Download className="h-5 w-5" />,
       color: "hover:text-green-600",
       download: true
