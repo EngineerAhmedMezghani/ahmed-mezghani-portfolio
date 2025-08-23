@@ -53,7 +53,7 @@ export default function ProjectsSection() {
     },
     {
       title: "VisioTrack – Real-Time Capacity Monitoring",
-      tech: ["Python", "YOLOv8", "DeepSORT", "FastAPI", "React.js", "PostgreSQL", "Plotly.js", "Tailwind CSS"],
+      tech: ["Python", "YOLOv8", "DeepSORT", "FastAPI", "React.js", "Tailwind CSS"],
       description: "VisioTrack is an intelligent computer vision-based solution to monitor human traffic in real-time within critical areas of a store. It combines AI, video processing, and data visualization to improve safety, flow, and business performance.",
       objectives: "Ensure compliance with safety standards, optimize customer flow, and enhance shopping experience.",
       challenges: "Accurate counting in crowded environments, reliable multi-object tracking, real-time processing, and clear visualization.",
