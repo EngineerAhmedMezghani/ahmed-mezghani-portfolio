@@ -228,11 +228,7 @@ export default function ContactSection() {
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-portfolio-accent/10 rounded-full text-portfolio-accent">
                       <Phone className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className="text-portfolio-text-muted">Phone</p>
-                      <p className="text-portfolio-text">+216 26 730 531 </p>
-                    </div>
+                    </div>                    
                   </div>
                   
                   <div className="flex items-center gap-3">
