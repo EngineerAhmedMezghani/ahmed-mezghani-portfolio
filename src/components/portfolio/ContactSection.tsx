@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Send, Github, Linkedin, Download, Phone, MapPin } from 'lucide-react';
+import { Mail, Send, Github, Linkedin, Download, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export default function ContactSection() {
@@ -225,11 +225,7 @@ export default function ContactSection() {
                     </div>
                   </div>
                   
-                  <div className="flex items-center gap-3">
-                    <div className="p-2 bg-portfolio-accent/10 rounded-full text-portfolio-accent">
-                      <Phone className="h-5 w-5" />
-                    </div>                    
-                  </div>
+                  
                   
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-portfolio-accent/10 rounded-full text-portfolio-accent">
