@@ -27,13 +27,14 @@ export default function ContactSection() {
 
     try {
       const response = await fetch('https://email-sender-api-1-haj5.onrender.com/send-email', {
+      
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           
         },
         body: JSON.stringify({
-          to: 'ahmed.mezghani@enis.tn', // 👈 Replace with your own email address
+          to: 'amezghani603@gmail.com', // 👈 Replace with your own email address
           subject: `[Portfolio Contact] ${formData.subject}`,
           html: `
             <div style="font-family: Arial, sans-serif;">

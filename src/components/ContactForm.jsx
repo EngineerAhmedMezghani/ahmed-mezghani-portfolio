@@ -38,7 +38,7 @@ function ContactForm() {
                 "x-api-key": process.env.REACT_APP_EMAIL_API_KEY,
             },
             body: JSON.stringify({
-                to: 'ahmed.mezghani@enis.tn',
+                to: 'amezghani603@gmail.com',
                 subject: `[Portfolio Contact] ${formData.subject}`,
                 message: `
                     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
