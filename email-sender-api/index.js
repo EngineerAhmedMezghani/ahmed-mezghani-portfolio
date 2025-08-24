@@ -60,7 +60,14 @@ transporter.verify((error, success) => {
 
 // === Email Sending Endpoint ===
 
+// === Email Sending Endpoint ===
 app.post('/send-email', async (req, res) => {
+  // 🔑 Check API key
+  const apiKey = req.headers['x-api-key'];
+  if (apiKey !== process.env.SECRET_API_KEY) {
+    return res.status(403).json({ message: 'Unauthorized: Invalid API key' });
+  }
+
   const { to, subject, text, html } = req.body;
 
   if (!to || !subject || (!text && !html)) {
@@ -90,11 +97,7 @@ app.post('/send-email', async (req, res) => {
       timestamp: new Date().toISOString()
     });
   } catch (error) {
-    console.error('❌ Email sending failed:', {
-      message: error.message,
-      code: error.code,
-      response: error.response
-    });
+    console.error('❌ Email sending failed:', error);
 
     res.status(500).json({
       message: 'Failed to send email',

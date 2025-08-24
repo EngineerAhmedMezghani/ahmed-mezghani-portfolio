@@ -30,6 +30,7 @@ export default function ContactSection() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          
         },
         body: JSON.stringify({
           to: 'ahmed.mezghani@enis.tn', // 👈 Replace with your own email address
