@@ -17,7 +17,7 @@ const port = process.env.PORT || 3001;
 
 // Enable CORS for your frontend only (Vercel domain)
 app.use(cors({
-  origin: 'https://ahmed-mezghani-portfolio.vercel.app',
+  origin: 'https://ahmed-mezghani.vercel.app',
   methods: ['POST', 'GET'],
 }));
 

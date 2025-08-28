@@ -22,19 +22,21 @@ export default function ContactSection() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log("API URL:", import.meta.env.VITE_API_BASE_URL);
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/send-email`;
+      const API_URL = `${import.meta.env.VITE_API_BASE_URL}/send-email`;
       const response = await fetch(API_URL, {
       
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': process.env.REACT_APP_EMAIL_API_KEY,
+          'x-api-key': import.meta.env.VITE_EMAIL_API_KEY,
         },
         body: JSON.stringify({
+          from: 'amezghani603@gmail.com', 
           to: 'amezghani603@gmail.com', // 👈 Replace with your own email address
           subject: `[Portfolio Contact] ${formData.subject}`,
           html: `

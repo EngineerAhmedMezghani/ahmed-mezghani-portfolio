@@ -49,7 +49,7 @@ export default function ProjectsSection() {
       image: "/images/Portfolio.png",
       category: "Full-Stack Web Development",
       github: "https://github.com/EngineerAhmedMezghani/ahmed-mezghani-portfolio",
-      demo: "https://ahmed-mezghani-portfolio.vercel.app/"
+      demo: "https://ahmed-mezghani.vercel.app/"
     },
     {
       title: "VisioTrack – Real-Time Capacity Monitoring",
