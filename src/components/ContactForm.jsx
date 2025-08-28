@@ -37,8 +37,9 @@ function ContactForm() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                "x-api-key": process.env.REACT_APP_EMAIL_API_KEY,
-            },
+                'x-api-key': import.meta.env.VITE_EMAIL_API_KEY,
+                },
+
             body: JSON.stringify({
                 to: 'amezghani603@gmail.com',
                 subject: `[Portfolio Contact] ${formData.subject}`,
