@@ -22,48 +22,62 @@ export default function ContactSection() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-
-  try {
     console.log("API URL:", import.meta.env.VITE_API_BASE_URL);
     const API_URL = `${import.meta.env.VITE_API_BASE_URL}/send-email`;
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-api-key": import.meta.env.VITE_EMAIL_API_KEY,
-      },
-      body: JSON.stringify({
-        from: formData.email,
-        to: "amezghani603@gmail.com",
-        subject: `[Portfolio Contact] ${formData.subject}`,
-        message: formData.message,
-      }),
-    });
+    try {
+      const API_URL = `${import.meta.env.VITE_API_BASE_URL}/send-email`;
+      const response = await fetch(API_URL, {
+      
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': import.meta.env.VITE_EMAIL_API_KEY,
+        },
+        body: JSON.stringify({
+          from: 'amezghani603@gmail.com', 
+          to: 'amezghani603@gmail.com', // 👈 Replace with your own email address
+          subject: `[Portfolio Contact] ${formData.subject}`,
+          html: `
+            <div style="font-family: Arial, sans-serif;">
+              <h3>Message from: ${formData.name}</h3>
+              <p><strong>Email:</strong> ${formData.email}</p>
+              <p><strong>Message:</strong></p>
+              <div>${formData.message}</div>
+            </div>
+          `,
+          text: `
+            From: ${formData.name}
+            Email: ${formData.email}
+            Subject: ${formData.subject}
 
-    if (!response.ok) {
-      throw new Error("Error sending email");
+            ${formData.message}
+          `
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Error sending email');
+      }
+
+      toast({
+        title: 'Success',
+        description: 'Message sent successfully!',
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: 'Error',
+        description: 'An error occurred. Please try again.',
+        variant: 'destructive'
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-
-    toast({
-      title: "Success",
-      description: "Message sent successfully!",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
-  } catch (error) {
-    console.error(error);
-    toast({
-      title: "Error",
-      description: "An error occurred. Please try again.",
-      variant: "destructive",
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
-
+  };
 
 
   const contactLinks = [

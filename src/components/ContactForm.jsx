@@ -30,7 +30,8 @@ function ContactForm() {
     setStatus('Sending...');
 
     try {
-        const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/send-email`;
+        const API_URL = `${import.meta.env.VITE_API_BASE_URL}/send-email`;
+        console.log("API URL:", API_URL); // Debugging line
         const response = await fetch(API_URL, {
             method: 'POST',
             headers: {
