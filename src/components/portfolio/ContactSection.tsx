@@ -23,6 +23,7 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     console.log("API URL:", import.meta.env.VITE_API_BASE_URL);
+    const API_URL = `${import.meta.env.VITE_API_BASE_URL}/send-email`;
     e.preventDefault();
     setIsSubmitting(true);
 
