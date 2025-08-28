@@ -7,19 +7,19 @@ const certifications = [
     title: "Introduction to Data and Data Science",
     provider: "365 Data Science",
     description: "Fundamentals of data types, collection, cleaning, analysis, and visualization.",
-    certificateUrl: "/api/placeholder/certificate/data-science-intro.pdf",
+    certificateUrl: "https://learn.365datascience.com/c/b11bd28175/",
     skills: ["Data Lifecycle", "Visualization", "Cleaning", "Data Types"],
     issueDate: "2024",
-    logo: "/api/placeholder/100/100"
+    logo: "public/images/data-science-intro.pdf"
   },
   {
     title: "Python Data Associate",
     provider: "DataCamp",
     description: "Exploratory data analysis with NumPy, pandas, Matplotlib, and Seaborn.",
-    certificateUrl: "/api/placeholder/certificate/python-data-associate.pdf",
+    certificateUrl: "https://www.datacamp.com/certificate/PDA0013831431267",
     skills: ["Python", "pandas", "NumPy", "EDA", "Data Visualization"],
     issueDate: "2024",
-    logo: "/api/placeholder/100/100"
+    logo: "public/images/python-data-associate.pdf"
   }
 ];
 
