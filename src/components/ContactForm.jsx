@@ -31,6 +31,7 @@ function ContactForm() {
 
     try {
         const API_URL = `${import.meta.env.VITE_API_BASE_URL}/send-email`;
+        console.log("VITE_API_BASE_URL:", import.meta.env.VITE_API_BASE_URL); // Debugging line
         console.log("API URL:", API_URL); // Debugging line
         const response = await fetch(API_URL, {
             method: 'POST',
