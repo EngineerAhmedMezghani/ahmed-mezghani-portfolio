@@ -26,12 +26,13 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://email-sender-api-1-haj5.onrender.com/send-email', {
+      const API_URL = `${process.env.NEXT_PUBLIC_API_BASE_URL}/send-email`;
+      const response = await fetch(API_URL, {
       
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          
+          'x-api-key': process.env.REACT_APP_EMAIL_API_KEY,
         },
         body: JSON.stringify({
           to: 'amezghani603@gmail.com', // 👈 Replace with your own email address
