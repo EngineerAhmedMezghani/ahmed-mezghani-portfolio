@@ -15,12 +15,23 @@ const certifications = [
   {
     title: "Python Data Associate",
     provider: "DataCamp",
-    description: "Exploratory data analysis with NumPy, pandas, Matplotlib, and Seaborn.",
+    description: "Certification covering data management, cleaning, exploratory data analysis, and visualization using Python. Gained hands-on expertise in importing, validating, and transforming data, as well as creating insightful visualizations.",
     certificateUrl: "https://www.datacamp.com/certificate/PDA0013831431267",
-    skills: ["Python", "pandas", "NumPy", "EDA", "Data Visualization"],
-    issueDate: "2024",
-    logo: "public/images/python-data-associate.pdf"
+    skills: [
+      "Python", 
+      "pandas", 
+      "NumPy", 
+      "Matplotlib", 
+      "Seaborn", 
+      "Data Cleaning", 
+      "Data Validation", 
+      "Exploratory Data Analysis (EDA)", 
+      "Data Visualization"
+    ],
+    issueDate: "2024-02",
+    logo: "public/images/python-data-associate.png"
   }
+
 ];
 
 
