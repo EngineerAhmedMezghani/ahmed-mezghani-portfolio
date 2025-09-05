@@ -3,6 +3,41 @@ import { Award, ExternalLink, FileText } from 'lucide-react';
 
 export default function CertificationsSection() {
 const certifications = [
+  
+  {
+    title: "Python Data Associate",
+    provider: "DataCamp",
+    description: "Certification covering data management, cleaning, EDA, and visualization in Python, with hands-on experience in importing, validating, and transforming data.",
+    certificateUrl: "https://www.datacamp.com/certificate/PDA0013831431267",
+    skills: [
+      "Python",
+      "pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "Data Cleaning",
+      "Data Validation", 
+      "Exploratory Data Analysis (EDA)", 
+      "Data Visualization"
+    ],
+    issueDate: "2024-02",
+    logo: "public/images/python-data-associate.png"
+  },
+  {
+      title: "Scrum Fundamentals Certified",
+      provider: "SCRUMstudy",
+      description: "Foundation-level certification covering the principles of Scrum, roles, artifacts, and events. Focused on Agile project management and value-based prioritization.",
+      certificateUrl: "https://www.scrumstudy.com/certification/verify?type=SFC&number=1102906",
+      skills: [
+        "Scrum Framework",
+        "Agile Project Management",
+        "Value-based Prioritization",
+        "Scrum Roles & Events"
+      ],
+      issueDate: "2024-09",
+      logo: "public/images/scrum-fundamentals.png"
+    },
+
   {
     title: "Introduction to Data and Data Science",
     provider: "365 Data Science",
@@ -11,27 +46,7 @@ const certifications = [
     skills: ["Data Lifecycle", "Visualization", "Cleaning", "Data Types"],
     issueDate: "2024",
     logo: "public/images/data-science-intro.pdf"
-  },
-  {
-    title: "Python Data Associate",
-    provider: "DataCamp",
-    description: "Certification covering data management, cleaning, exploratory data analysis, and visualization using Python. Gained hands-on expertise in importing, validating, and transforming data, as well as creating insightful visualizations.",
-    certificateUrl: "https://www.datacamp.com/certificate/PDA0013831431267",
-    skills: [
-      "Python", 
-      "pandas", 
-      "NumPy", 
-      "Matplotlib", 
-      "Seaborn", 
-      "Data Cleaning", 
-      "Data Validation", 
-      "Exploratory Data Analysis (EDA)", 
-      "Data Visualization"
-    ],
-    issueDate: "2024-02",
-    logo: "public/images/python-data-associate.png"
   }
-
 ];
 
 
