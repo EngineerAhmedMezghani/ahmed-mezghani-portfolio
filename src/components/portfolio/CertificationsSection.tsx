@@ -46,7 +46,25 @@ const certifications = [
     skills: ["Data Lifecycle", "Visualization", "Cleaning", "Data Types"],
     issueDate: "2024",
     logo: "public/images/data-science-intro.pdf"
+  },
+  {
+    title: "Fullstack Web Development with MERN",
+    provider: "Orange Digital Center",
+    description: "3-day hands-on training focused on building fullstack web applications using the MERN stack (MongoDB, Express.js, React, Node.js).",
+    certificateUrl: "public/images/FullStackWebMERN.pdf", // replace with actual verification link if available
+    skills: [
+      "MongoDB",
+      "Express.js",
+      "React",
+      "Node.js",
+      "Fullstack Development",
+      "Web Development"
+    ],
+    issueDate: "2025-09",
+    logo: "public/images/orange-digital-center.png"
   }
+
+
 ];
 
 
