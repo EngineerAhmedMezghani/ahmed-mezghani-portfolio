@@ -51,7 +51,7 @@ const certifications = [
     title: "Fullstack Web Development with MERN",
     provider: "Orange Digital Center",
     description: "3-day hands-on training focused on building fullstack web applications using the MERN stack (MongoDB, Express.js, React, Node.js).",
-    certificateUrl: "public/images/FullStackWebMERN.pdf", // replace with actual verification link if available
+    certificateUrl: "images/FullStackWebMERN.pdf", // replace with actual verification link if available
     skills: [
       "MongoDB",
       "Express.js",
