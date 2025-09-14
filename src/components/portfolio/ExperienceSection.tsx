@@ -4,6 +4,26 @@ import { Users, Trophy } from 'lucide-react';
 export default function ExperienceSection() {
   const experiences = [
     {
+      id: 'ieee-member',
+      icon: <Users className="h-6 w-6" />,
+      title: "Member",
+      organization: "IEEE",
+      description: "Active member of the Institute of Electrical and Electronics Engineers, engaging in professional development and global networking.",
+      type: "Organization",
+      period: "Since 2024",
+      href: "https://www.ieee.org/"
+    },
+    {
+      id: 'ieee-cs-member',
+      icon: <Users className="h-6 w-6" />,
+      title: "Member",
+      organization: "IEEE Computer Society",
+      description: "Member of the IEEE Computer Society, participating in communities advancing computing and technology innovations.",
+      type: "Organization",
+      period: "Since 2024",
+      href: "https://www.computer.org/"
+    },
+    {
       id: 'media-pyfac-x',
       icon: <Users className="h-6 w-6" />,
       title: "Media Member",
@@ -55,7 +75,7 @@ export default function ExperienceSection() {
           </motion.h2>
 
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {experiences.map((experience, index) => (
                 <a
                   key={experience.id}
@@ -65,40 +85,31 @@ export default function ExperienceSection() {
                   className="block"
                 >
                   <motion.div
-                    className="portfolio-card hover:shadow-lg hover:scale-[1.01] transition-all duration-300"
+                    className="portfolio-card hover:shadow-lg hover:scale-[1.01] transition-all duration-300 flex flex-col gap-4 p-4"
                     initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                     viewport={{ once: true }}
                   >
-                    <div className="flex items-start gap-4">
+                    <div className="flex items-center gap-4">
                       <div className="flex-shrink-0 p-3 bg-portfolio-accent/10 rounded-full text-portfolio-accent">
                         {experience.icon}
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
-                          <div>
-                            <h3 className="text-xl font-semibold text-portfolio-text">
-                              {experience.title}
-                            </h3>
-                            <p className="text-portfolio-accent font-medium">
-                              {experience.organization}
-                            </p>
-                          </div>
-                          <div className="flex flex-col sm:items-end gap-1">
-                            <span className="text-portfolio-text-muted text-sm">
-                              {experience.period}
-                            </span>
-                            <span className="text-portfolio-accent font-medium bg-portfolio-accent/10 px-3 py-1 rounded-full text-sm">
-                              {experience.type}
-                            </span>
-                          </div>
-                        </div>
-                        <p className="text-portfolio-text-muted leading-relaxed">
-                          {experience.description}
+                      <div className="flex-1">
+                        <h3 className="text-lg font-semibold text-portfolio-text">
+                          {experience.title}
+                        </h3>
+                        <p className="text-portfolio-accent font-medium">
+                          {experience.organization}
+                        </p>
+                        <p className="text-portfolio-text-muted text-sm">
+                          {experience.period}
                         </p>
                       </div>
                     </div>
+                    <p className="text-portfolio-text-muted leading-relaxed mt-2">
+                      {experience.description}
+                    </p>
                   </motion.div>
                 </a>
               ))}
@@ -109,3 +120,4 @@ export default function ExperienceSection() {
     </section>
   );
 }
+
