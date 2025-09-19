@@ -62,7 +62,27 @@ const certifications = [
     ],
     issueDate: "2025-09",
     logo: "public/images/orange-digital-center.png"
-  }
+  },
+{
+  title: "Scrum for Ops and DevOps Fundamentals Certified (SODFC)",
+  provider: "VMEdu Inc.",
+  description: "Certification on applying Scrum to IT Operations and DevOps, covering recurring work, incident handling, SLAs, swarming, and escalations to ensure agility in business-critical services.",
+  certificateUrl: "https://www.scrumstudy.com/certification/verify?type=SODFC&number=1107043", // replace with actual verification link
+  skills: [
+    "ScrumOps",
+    "Agile Operations",
+    "DevOps Practices",
+    "Operational User Stories",
+    "Work Packages & Templates",
+    "Incident Management",
+    "Service Level Agreements (SLAs)",
+    "Swarming & Escalations"
+  ],
+  issueDate: "2025-09",
+  logo: "public/images/scrum-ops-devops.png"
+}
+
+
 
 
 ];
