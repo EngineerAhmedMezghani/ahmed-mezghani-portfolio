@@ -31,48 +31,53 @@ function ContactForm() {
 
     try {
         const API_URL = `${import.meta.env.VITE_API_BASE_URL}/send-email`;
-        console.log("VITE_API_BASE_URL:", import.meta.env.VITE_API_BASE_URL); // Debugging line
-        console.log("API URL:", API_URL); // Debugging line
-        const response = await fetch(API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-api-key': import.meta.env.VITE_EMAIL_API_KEY,
-                },
 
-            body: JSON.stringify({
-                to: 'amezghani603@gmail.com',
-                subject: `[Portfolio Contact] ${formData.subject}`,
-                message: `
-                    <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-                        <h2>New Portfolio Contact Message</h2>
-                        <p><strong>From:</strong> ${formData.name}</p>
-                        <p><strong>Email:</strong> ${formData.senderEmail}</p>
-                        <p><strong>Subject:</strong> ${formData.subject}</p>
-                        <hr style="border: 1px solid #eee;">
-                        <div style="white-space: pre-wrap;">${formData.message}</div>
-                    </div>
-                `
-            })
+        const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': import.meta.env.VITE_EMAIL_API_KEY,
+        },
+        body: JSON.stringify({
+            to: 'amezghani603@gmail.com',
+            subject: `[Portfolio Contact] ${formData.subject}`,
+            text: `
+            From: ${formData.name} (${formData.senderEmail})
+            Subject: ${formData.subject}
+            Message: ${formData.message}
+            `,
+            html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+                <h2>New Portfolio Contact Message</h2>
+                <p><strong>From:</strong> ${formData.name}</p>
+                <p><strong>Email:</strong> ${formData.senderEmail}</p>
+                <p><strong>Subject:</strong> ${formData.subject}</p>
+                <hr style="border: 1px solid #eee;">
+                <div style="white-space: pre-wrap;">${formData.message}</div>
+            </div>
+            `
+        })
         });
 
         const data = await response.json();
 
         if (response.ok) {
-            setStatus('Message sent successfully! ✅');
-            setFormData({ name: '', senderEmail: '', subject: '', message: '' });
-            setTimeout(() => setStatus(''), 5000);
+        setStatus('Message sent successfully! ✅');
+        setFormData({ name: '', senderEmail: '', subject: '', message: '' });
+        setTimeout(() => setStatus(''), 5000);
         } else {
-            throw new Error(data.message || 'Failed to send message');
+        throw new Error(data.message || 'Failed to send message');
         }
     } catch (error) {
         console.error('Error:', error);
         const errorMessage = error.message.includes('Failed to fetch') 
-            ? 'Unable to connect to email service. Please check your internet connection.'
-            : `Failed to send message: ${error.message}`;
+        ? 'Unable to connect to email service. Please check your internet connection.'
+        : `Failed to send message: ${error.message}`;
         setStatus(`${errorMessage} ❌`);
         setTimeout(() => setStatus(''), 5000);
     }
+    };
+
 }
 
     return (
@@ -143,6 +148,5 @@ function ContactForm() {
             {status && <p className="mt-4 text-center text-sm text-gray-600">{status}</p>}
         </div>
     );
-}
 
 export default ContactForm;
