@@ -57,7 +57,7 @@ export default function InternshipSection() {
                 Summer 2025,
               </p>
               <p>
-                💼 I am currently an intern at{' '}
+                💼 I completed an internship at{' '}
                 <a
                   href="https://www.visshopai.com/"
                   target="_blank"
@@ -68,13 +68,13 @@ export default function InternshipSection() {
                   VisShop AI
                   <ExternalLink className="h-4 w-4" />
                 </a>
-                ,
+                .
               </p>
               <p>
-                working on the <span className="font-bold text-portfolio-accent">VisioTrack</span> project — an intelligent real-time crowd monitoring system using computer vision (YOLOv8, DeepSORT), FastAPI, and React.
+                I contributed to the <span className="font-bold text-portfolio-accent">VisioTrack</span> project — an intelligent real-time crowd monitoring system using computer vision (YOLOv8, DeepSORT), FastAPI, and React.
               </p>
               <p>
-                My contributions focus on person detection, zone-based tracking, alert generation, and visual analytics.
+                My work focused on person detection, zone-based tracking, alert generation, and visual analytics.
               </p>
             </div>
           </motion.div>
