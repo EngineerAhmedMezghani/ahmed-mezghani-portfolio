@@ -24,6 +24,17 @@ export default function ExperienceSection() {
       href: "https://www.computer.org/"
     },
     {
+      id: 'microsoft-tech-club-member',
+      icon: <Users className="h-6 w-6" />,
+      title: "Member",
+      organization: "Microsoft Tech Club",
+      description:
+        "Active member of the Microsoft Tech Club, collaborating on innovative projects, tech talks, and student-led initiatives focused on Microsoft technologies.",
+      type: "Organization",
+      period: "Since 2025",
+      href: "https://studentambassadors.microsoft.com/",
+    },
+    {
       id: 'media-pyfac-x',
       icon: <Users className="h-6 w-6" />,
       title: "Media Member",
