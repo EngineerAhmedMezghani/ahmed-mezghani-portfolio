@@ -43,7 +43,7 @@ export default function ProjectsSection() {
       "CLI security tool for local scans",
       "CI/CD integration with automated security checks"
     ],
-    image: "public/images/SecureGate.png",
+    image: "/images/SecureGate.png",
     category: "AI/ML Security",
     github: null,
     demo: null,
