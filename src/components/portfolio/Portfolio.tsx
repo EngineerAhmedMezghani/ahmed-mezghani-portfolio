@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ThemeProvider } from 'next-themes';
+import CursorFollower from '@/components/CursorFollower';
 import Header from './Header';
 import WelcomeSection from './WelcomeSection';  // << Import your new component here
 import AboutSection from './AboutSection';
@@ -48,6 +49,7 @@ export default function Portfolio() {
   return (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
       <div className="min-h-screen bg-portfolio-bg">
+        <CursorFollower />
         <Header activeSection={activeSection} />
         <main role="main" aria-label="Contenu principal du portfolio">
           <WelcomeSection />       {/* <<< Add here */}

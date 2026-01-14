@@ -1,5 +1,6 @@
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, X } from 'lucide-react';
 
 export default function ProjectsSection() {
   const projects = [
@@ -28,17 +29,27 @@ export default function ProjectsSection() {
       // demo: "https://football-analysis-demo.com"
     },
     {
-      title: "Event Booking System",
-      tech: ["HTML5", "CSS3", "JavaScript ES6", "PHP", "MySQL"],
-      description: "Complete web platform for event booking with responsive interface and robust backend. User management, real-time seat reservation, integrated payment system, and admin dashboard for event management.",
-      objectives: "Simplify event booking with an optimal user experience",
-      challenges: "Handling booking concurrency, secure payment integration",
-      features: ["Interactive calendar", "Real-time booking", "Secure payment", "Admin dashboard", "Email notifications"],
-      image: "images/event-reservation.png",
-      category: "Web Development",
-      // github: "https://github.com/ahmed-mezghani/event-reservation",
-      // demo: "https://event-reservation-demo.com"
-    },
+    title: "SecureGate",
+    tech: ["FastAPI", "React", "PostgreSQL", "Python/Typer", "Rego (OPA)"],
+    description: "SecureGate secures AI/ML pipelines in a DevSecOps environment. It detects vulnerabilities in notebooks, models, and dependencies, enforces security policies, and provides immediate developer feedback via dashboards and CLI tools.",
+    objectives: "Strengthen AI/ML pipeline security while streamlining developer workflows and enforcing compliance with organizational and industry standards.",
+    challenges: "Detecting sensitive data in notebooks, ensuring safe model deployments, scanning dependencies for vulnerabilities, and integrating seamless CI/CD enforcement.",
+    features: [
+      "Notebook analysis for sensitive data",
+      "Model inspection for unsafe configurations",
+      "Dependency scanning for vulnerabilities",
+      "Policy engine enforcing OWASP LLM Top 10 and MITRE ATLAS rules",
+      "Interactive dashboard for developer feedback",
+      "CLI security tool for local scans",
+      "CI/CD integration with automated security checks"
+    ],
+    image: "public/images/SecureGate.png",
+    category: "AI/ML Security",
+    github: null,
+    demo: null,
+    placeholder: true
+  },
+
     {
       title: "Interactive Personal Portfolio",
       tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "AI Chatbot", "Email Automation"],
@@ -66,10 +77,24 @@ export default function ProjectsSection() {
       ],
       image: "/images/visiotrack-dashboard.png",
       category: "AI - Computer Vision",
-      github: null,
+      github: "https://github.com/EngineerAhmedMezghani/Computer-Vision-Surveillance-System",
       demo: null
     },
   ];
+
+  const [modal, setModal] = useState<{ visible: boolean; title?: string }>({ visible: false });
+
+  const handlePlaceholderClick = (title: string) => {
+    setModal({ visible: true, title });
+  };
+
+  const closeModal = () => setModal({ visible: false });
+
+  const goToContact = () => {
+    closeModal();
+    const el = document.getElementById('contact');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <section id="projects" className="portfolio-section">
@@ -109,7 +134,7 @@ export default function ProjectsSection() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="flex gap-2">
-                      {project.github && (
+                      {project.github ? (
                         <motion.a
                           href={project.github}
                           target="_blank"
@@ -121,8 +146,20 @@ export default function ProjectsSection() {
                         >
                           <Github className="h-4 w-4 text-white" />
                         </motion.a>
-                      )}
-                      {project.demo && (
+                      ) : project.placeholder ? (
+                        <motion.button
+                          type="button"
+                          onClick={() => handlePlaceholderClick(project.title)}
+                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          aria-label="Placeholder source code"
+                        >
+                          <Github className="h-4 w-4 text-white" />
+                        </motion.button>
+                      ) : null}
+
+                      {project.demo ? (
                         <motion.a
                           href={project.demo}
                           target="_blank"
@@ -134,7 +171,18 @@ export default function ProjectsSection() {
                         >
                           <ExternalLink className="h-4 w-4 text-white" />
                         </motion.a>
-                      )}
+                      ) : project.placeholder ? (
+                        <motion.button
+                          type="button"
+                          onClick={() => handlePlaceholderClick(project.title)}
+                          className="p-2 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white/30 transition-colors"
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          aria-label="Placeholder demo"
+                        >
+                          <ExternalLink className="h-4 w-4 text-white" />
+                        </motion.button>
+                      ) : null}
                     </div>
                   </div>
                   <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -193,7 +241,7 @@ export default function ProjectsSection() {
                     </div>
 
                     <div className="flex gap-3 pt-2">
-                      {project.github && (
+                      {project.github ? (
                         <a
                           href={project.github}
                           target="_blank"
@@ -204,8 +252,19 @@ export default function ProjectsSection() {
                           <Github className="h-4 w-4 mr-2 inline" />
                           Code
                         </a>
-                      )}
-                      {project.demo && (
+                      ) : project.placeholder ? (
+                        <button
+                          type="button"
+                          onClick={() => handlePlaceholderClick(project.title)}
+                          className="portfolio-button-outline text-sm py-2 px-4"
+                          aria-label="Placeholder source code"
+                        >
+                          <Github className="h-4 w-4 mr-2 inline" />
+                          Code
+                        </button>
+                      ) : null}
+
+                      {project.demo ? (
                         <a
                           href={project.demo}
                           target="_blank"
@@ -216,7 +275,17 @@ export default function ProjectsSection() {
                           <ExternalLink className="h-4 w-4 mr-2 inline" />
                           Demo
                         </a>
-                      )}
+                      ) : project.placeholder ? (
+                        <button
+                          type="button"
+                          onClick={() => handlePlaceholderClick(project.title)}
+                          className="portfolio-button text-sm py-2 px-4"
+                          aria-label="Placeholder demo"
+                        >
+                          <ExternalLink className="h-4 w-4 mr-2 inline" />
+                          Demo
+                        </button>
+                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -225,6 +294,38 @@ export default function ProjectsSection() {
           </div>
         </motion.div>
       </div>
+
+      {modal.visible && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg max-w-md w-full p-6 relative">
+            <button
+              onClick={closeModal}
+              aria-label="Close"
+              className="absolute top-3 right-3 p-1 rounded hover:bg-gray-100 dark:hover:bg-zinc-800"
+            >
+              <X className="h-4 w-4" />
+            </button>
+
+            <h3 className="text-lg font-semibold mb-3">{modal.title}</h3>
+            <p className="text-sm text-portfolio-text-muted mb-4">The project will be finalized by the end of the university year.</p>
+
+            <div className="flex gap-3 justify-end">
+              <button
+                onClick={goToContact}
+                className="portfolio-button text-sm py-2 px-4"
+              >
+                Contact Me
+              </button>
+              <button
+                onClick={closeModal}
+                className="portfolio-button-outline text-sm py-2 px-4"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

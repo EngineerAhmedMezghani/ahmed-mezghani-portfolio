@@ -1,5 +1,6 @@
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Users, Trophy } from 'lucide-react';
+import { Users, Trophy, X } from 'lucide-react';
 
 export default function ExperienceSection() {
   const experiences = [
@@ -63,8 +64,33 @@ export default function ExperienceSection() {
       type: "Competition",
       period: "2024",
       href: "https://www.facebook.com/profile.php?id=100091509070916"
+    },
+    {
+      id: 'participant-tsyp13',
+      icon: <Trophy className="h-6 w-6" />,
+      title: "Organizing Committee Member",
+      organization: "TSYP13",
+      description: "Participated in the organisation of the Tunisian Student and Young Professional Congress TSYP13.",
+      type: "Competition",
+      period: "2025",
+      href: "https://www.facebook.com/ieee.tsyp?locale=fr_FR",
+      website: "https://tsyp.ieee.tn/"
     }
   ];
+
+  const [choiceModal, setChoiceModal] = useState<{ visible: boolean; title?: string; website?: string; facebook?: string }>({ visible: false });
+
+  const openChoiceModal = (exp: any) => {
+    setChoiceModal({ visible: true, title: exp.title, website: exp.website, facebook: exp.href });
+  };
+
+  const closeChoiceModal = () => setChoiceModal({ visible: false });
+
+  const openExternal = (url?: string) => {
+    if (!url) return;
+    window.open(url, '_blank', 'noopener,noreferrer');
+    closeChoiceModal();
+  };
 
   return (
     <section id="experience" className="portfolio-section bg-gradient-to-b from-portfolio-bg to-muted/20">
@@ -87,14 +113,8 @@ export default function ExperienceSection() {
 
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {experiences.map((experience, index) => (
-                <a
-                  key={experience.id}
-                  href={experience.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
+              {experiences.map((experience, index) => {
+                const card = (
                   <motion.div
                     className="portfolio-card hover:shadow-lg hover:scale-[1.01] transition-all duration-300 flex flex-col gap-4 p-4"
                     initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
@@ -122,12 +142,70 @@ export default function ExperienceSection() {
                       {experience.description}
                     </p>
                   </motion.div>
-                </a>
-              ))}
+                );
+
+                // Special handling for TSYP13: open modal to choose Official Website or Facebook
+                if (experience.id === 'participant-tsyp13') {
+                  return (
+                    <button
+                      key={experience.id}
+                      type="button"
+                      onClick={() => openChoiceModal(experience)}
+                      className="block text-left w-full"
+                    >
+                      {card}
+                    </button>
+                  );
+                }
+
+                // default: external link
+                return (
+                  <a
+                    key={experience.id}
+                    href={experience.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    {card}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </motion.div>
       </div>
+      {choiceModal.visible && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg max-w-md w-full p-6 relative">
+            <button
+              onClick={closeChoiceModal}
+              aria-label="Close"
+              className="absolute top-3 right-3 p-1 rounded hover:bg-gray-100 dark:hover:bg-zinc-800"
+            >
+              <X className="h-4 w-4" />
+            </button>
+
+            <h3 className="text-lg font-semibold mb-3">{choiceModal.title}</h3>
+            <p className="text-sm text-portfolio-text-muted mb-4">Where would you like to go?</p>
+
+            <div className="flex gap-3 justify-end">
+              <button
+                onClick={() => openExternal(choiceModal.website)}
+                className="portfolio-button-outline text-sm py-2 px-4"
+              >
+                Official Website
+              </button>
+              <button
+                onClick={() => openExternal(choiceModal.facebook)}
+                className="portfolio-button text-sm py-2 px-4"
+              >
+                Facebook Page
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

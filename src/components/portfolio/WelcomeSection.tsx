@@ -24,14 +24,14 @@ export default function WelcomeSection() {
         viewport={{ once: true }}
       >
         <motion.h1
-          className="text-4xl md:text-6xl font-extrabold tracking-tight text-portfolio-accent"
+          className="text-4xl md:text-6xl font-extrabold tracking-tight portfolio-gradient-text"
           variants={fadeInUp(0.5)}
         >
           Hi, I’m Ahmed Mezghani 👋
         </motion.h1>
 
         <motion.p
-          className="mt-4 text-base md:text-lg leading-relaxed text-portfolio-text-muted dark:text-white"
+          className="mt-4 text-base md:text-lg leading-relaxed text-portfolio-text-muted"
           variants={fadeInUp(0.7)}
         >
           A <span className="font-semibold text-portfolio-accent">Computer Engineering student </span> 
@@ -39,6 +39,22 @@ export default function WelcomeSection() {
           <span className="underline decoration-portfolio-accent/50">full-stack web development</span>, and{" "}
           <span className="underline decoration-portfolio-accent/50">Agile methodologies (Scrum)</span>.
         </motion.p>
+
+        <motion.div
+          className="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-center md:justify-start"
+          variants={fadeInUp(0.9)}
+        >
+          <a href="#contact" className="portfolio-button text-center">
+            Contact Me
+          </a>
+          <a
+            href="/images/Ahmed-Mezghani.pdf"
+            className="portfolio-button-outline text-center"
+            download
+          >
+            Download CV
+          </a>
+        </motion.div>
       </motion.div>
 
       {/* Profile image */}

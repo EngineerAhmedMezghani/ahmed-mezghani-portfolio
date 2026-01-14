@@ -4,88 +4,82 @@
 
 @layer base {
   :root {
-    /* Light Theme - White background, Black text, Vibrant Blue accent */
-    --background: 0 0% 100%; /* White */
-    --foreground: 0 0% 0%; /* Black */
-    --card: 0 0% 100%; /* Pure white cards */
-    --card-foreground: 0 0% 0%; /* Black text on cards */
-    --popover: 0 0% 100%; /* Pure white popovers */
-    --popover-foreground: 0 0% 0%; /* Black text on popovers */
-    --primary: 210 100% 50%; /* Vibrant Blue (RGB 0, 128, 255) */
-    --primary-foreground: 0 0% 100%; /* White text on primary */
-    --primary-glow: 210 100% 70%; /* Lighter blue for glow effect */
-    --secondary: 0 0% 95%; /* Very light gray for secondary elements */
-    --secondary-foreground: 0 0% 15%; /* Dark gray for secondary text */
-    --muted: 0 0% 90%; /* Light gray for muted backgrounds */
-    --muted-foreground: 0 0% 40%; /* Medium gray for muted text */
-    --accent: 210 100% 90%; /* Very light blue accent */
-    --accent-foreground: 210 100% 30%; /* Darker blue for accent text */
-    --destructive: 0 80% 60%; /* Bright red for destructive actions */
-    --destructive-foreground: 0 0% 100%; /* White text on destructive */
-    --border: 0 0% 85%; /* Light gray border */
-    --input: 0 0% 85%; /* Light gray input border */
-    --ring: 210 100% 50%; /* Ring color matches primary */
-    --radius: 0.75rem;
+    --background: 240 20% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 243 75% 59%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 256 85% 65%;
+    --secondary: 240 10% 96%;
+    --secondary-foreground: 222 30% 18%;
+    --muted: 240 10% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 240 10% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 16% 86%;
+    --input: 222 16% 86%;
+    --ring: 243 75% 59%;
+    --radius: 1rem;
 
-    /* Portfolio specific colors (Light Theme) */
-    --portfolio-bg: 0 0% 100%; /* Matches background */
-    --portfolio-card: 0 0% 100%; /* Matches card */
-    --portfolio-text: 0 0% 0%; /* Matches foreground */
-    --portfolio-text-muted: 0 0% 40%; /* Matches muted-foreground */
-    --portfolio-accent: 210 100% 50%; /* Matches primary */
-    --portfolio-accent-hover: 210 100% 40%; /* Slightly darker blue on hover */
+    --portfolio-bg: 240 20% 98%;
+    --portfolio-card: 0 0% 100%;
+    --portfolio-text: 222 47% 11%;
+    --portfolio-text-muted: 215 16% 47%;
+    --portfolio-accent: 243 75% 59%;
+    --portfolio-accent-hover: 243 75% 52%;
 
-    /* Sidebar colors (Light Theme) */
-    --sidebar-background: 0 0% 100%; /* White sidebar */
-    --sidebar-foreground: 0 0% 0%; /* Black text */
-    --sidebar-primary: 210 100% 50%; /* Blue primary */
-    --sidebar-primary-foreground: 0 0% 100%; /* White text */
-    --sidebar-accent: 210 100% 90%; /* Light blue accent */
-    --sidebar-accent-foreground: 210 100% 30%; /* Darker blue text */
-    --sidebar-border: 0 0% 85%; /* Light gray border */
-    --sidebar-ring: 210 100% 50%; /* Blue ring */
+    --sidebar-background: 240 20% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 243 75% 59%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 10% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 222 16% 86%;
+    --sidebar-ring: 243 75% 59%;
   }
 
   .dark {
-    /* Dark Theme - Dark background, Light text, Muted Blue accent */
-    --background: 210 10% 10%; /* Very dark blue-gray */
-    --foreground: 0 0% 90%; /* Light gray */
-    --card: 210 10% 15%; /* Darker blue-gray cards */
-    --card-foreground: 0 0% 90%; /* Light gray text on cards */
-    --popover: 210 10% 15%; /* Darker blue-gray popovers */
-    --popover-foreground: 0 0% 90%; /* Light gray text on popovers */
-    --primary: 210 80% 60%; /* Muted blue for dark mode primary */
-    --primary-foreground: 210 10% 10%; /* Dark text on primary */
-    --primary-glow: 210 80% 50%; /* Slightly darker muted blue glow */
-    --secondary: 210 10% 25%; /* Darker secondary background */
-    --secondary-foreground: 0 0% 90%; /* Light text on secondary */
-    --muted: 210 10% 20%; /* Darker muted background */
-    --muted-foreground: 0 0% 60%; /* Medium light gray for muted text */
-    --accent: 210 80% 35%; /* Darker accent */
-    --accent-foreground: 0 0% 90%; /* Light text on accent */
-    --destructive: 0 70% 50%; /* Darker red */
-    --destructive-foreground: 0 0% 90%; /* Light text on destructive */
-    --border: 210 10% 25%; /* Dark border */
-    --input: 210 10% 25%; /* Dark input border */
-    --ring: 210 80% 60%; /* Ring color matches primary */
+    --background: 222 47% 7%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 10%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 10%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 243 75% 62%;
+    --primary-foreground: 222 47% 7%;
+    --primary-glow: 256 85% 68%;
+    --secondary: 222 35% 14%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 35% 12%;
+    --muted-foreground: 215 20% 68%;
+    --accent: 222 35% 14%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 24% 18%;
+    --input: 222 24% 18%;
+    --ring: 243 75% 62%;
 
-    /* Portfolio dark theme */
-    --portfolio-bg: 210 10% 10%; /* Matches background */
-    --portfolio-card: 210 10% 15%; /* Matches card */
-    --portfolio-text: 0 0% 90%; /* Matches foreground */
-    --portfolio-text-muted: 0 0% 60%; /* Matches muted-foreground */
-    --portfolio-accent: 210 80% 60%; /* Matches primary */
-    --portfolio-accent-hover: 210 80% 50%; /* Slightly darker primary on hover */
+    --portfolio-bg: 222 47% 7%;
+    --portfolio-card: 222 47% 10%;
+    --portfolio-text: 210 40% 98%;
+    --portfolio-text-muted: 215 20% 68%;
+    --portfolio-accent: 243 75% 62%;
+    --portfolio-accent-hover: 243 75% 56%;
 
-    /* Sidebar dark colors */
-    --sidebar-background: 210 10% 15%; /* Darker sidebar */
-    --sidebar-foreground: 0 0% 90%; /* Light text */
-    --sidebar-primary: 210 80% 60%; /* Muted blue primary */
-    --sidebar-primary-foreground: 210 10% 10%; /* Dark text */
-    --sidebar-accent: 210 80% 35%; /* Darker accent */
-    --sidebar-accent-foreground: 0 0% 90%; /* Light text */
-    --sidebar-border: 210 10% 25%; /* Dark border */
-    --sidebar-ring: 210 80% 60%; /* Muted blue ring */
+    --sidebar-background: 222 47% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 243 75% 62%;
+    --sidebar-primary-foreground: 222 47% 7%;
+    --sidebar-accent: 222 35% 14%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 24% 18%;
+    --sidebar-ring: 243 75% 62%;
   }
 }
 
@@ -93,18 +87,25 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-    /* Ensure you import your chosen fonts here, e.g.: */
-    /* font-family: 'Montserrat', sans-serif; */
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji",
+      "Segoe UI Emoji";
+  }
+  ::selection {
+    background: hsl(var(--portfolio-accent) / 0.18);
   }
 }
 
 @layer components {
   /* Portfolio specific styles */
   .portfolio-section {
-    @apply py-20 px-4 md:px-6 lg:px-8;
+    @apply py-24 px-4 md:px-6 lg:px-8;
+    scroll-margin-top: 96px;
   }
 
   .portfolio-section:nth-child(even) {
@@ -116,7 +117,18 @@
   }
 
   .portfolio-card {
-    @apply bg-portfolio-card border border-border rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 p-6;
+    @apply bg-portfolio-card border border-border/60 rounded-2xl transition-all duration-300 p-6;
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-2px);
+    border-color: hsl(var(--portfolio-accent) / 0.25);
+    box-shadow: 0 16px 50px rgba(2, 6, 23, 0.12);
+  }
+
+  .dark .portfolio-card {
+    box-shadow: 0 14px 50px rgba(0, 0, 0, 0.35);
   }
 
   .portfolio-gradient-text {
@@ -126,16 +138,67 @@
 
   .portfolio-button {
     /* Updated button to use the new accent colors */
-    @apply bg-portfolio-accent hover:bg-portfolio-accent-hover text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+    @apply bg-portfolio-accent hover:bg-portfolio-accent-hover text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-portfolio-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 
   .portfolio-button-outline {
     /* Updated outline button */
-    @apply border-2 border-portfolio-accent text-portfolio-accent hover:bg-portfolio-accent hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200;
+    @apply border-2 border-portfolio-accent/60 text-portfolio-accent hover:bg-portfolio-accent hover:text-white font-semibold py-3 px-6 rounded-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-portfolio-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background;
   }
 
   .portfolio-nav-link {
     /* Updated nav link colors */
-    @apply text-portfolio-text hover:text-portfolio-accent transition-colors duration-200 font-medium;
+    @apply relative text-portfolio-text hover:text-portfolio-accent transition-colors duration-200 font-medium;
+  }
+
+  .portfolio-nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    height: 2px;
+    width: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, hsl(var(--portfolio-accent)), hsl(var(--primary-glow)));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+    opacity: 0.9;
+  }
+
+  .portfolio-nav-link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .portfolio-nav-link.is-active::after {
+    transform: scaleX(1);
+  }
+
+  .cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.9;
+    background: linear-gradient(135deg, hsl(var(--portfolio-accent)), hsl(var(--primary-glow)));
+    transform: translate3d(calc(var(--x, 0px) - 50%), calc(var(--y, 0px) - 50%), 0);
+    transition: transform 0.5s ease;
+    filter: drop-shadow(0 10px 20px hsl(var(--portfolio-accent) / 0.22));
+  }
+
+  @media (hover: none) {
+    .cursor-follower {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-follower {
+      transition: none;
+    }
   }
 }

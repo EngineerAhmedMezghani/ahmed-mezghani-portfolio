@@ -85,7 +85,7 @@ export default function Header({ activeSection }: HeaderProps) {
                   key={item.label}
                   onClick={() => scrollToSection(item.href)}
                   className={`portfolio-nav-link ${
-                    activeSection === item.href.slice(1) ? 'text-portfolio-accent' : ''
+                    activeSection === item.href.slice(1) ? 'text-portfolio-accent is-active' : ''
                   }`}
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
