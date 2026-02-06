@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 import { Mail, Send, Github, Linkedin, Download, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -13,6 +14,21 @@ export default function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  const USE_EMAILJS = import.meta.env.VITE_USE_EMAILJS === 'true';
+  const EMAILJS_SERVICE = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAILJS_TEMPLATE = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+  useEffect(() => {
+    if (USE_EMAILJS && EMAILJS_PUBLIC_KEY) {
+      try {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+      } catch (e) {
+        console.warn('EmailJS init failed', e);
+      }
+    }
+  }, []);
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -21,24 +37,99 @@ export default function ContactSection() {
     }));
   };
 
+  const loadRecaptcha = (siteKey: string) => {
+    return new Promise<void>((resolve, reject) => {
+      if (typeof window === 'undefined') return reject(new Error('No window'));
+      if ((window as any).grecaptcha) return resolve();
+      const script = document.createElement('script');
+      script.src = `https://www.google.com/recaptcha/api.js?render=${siteKey}`;
+      script.async = true;
+      script.defer = true;
+      script.onload = () => resolve();
+      script.onerror = () => reject(new Error('Failed to load reCAPTCHA'));
+      document.head.appendChild(script);
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
-    console.log("API URL:", import.meta.env.VITE_API_BASE_URL);
-    const API_URL = `${import.meta.env.VITE_API_BASE_URL}/send-email`;
     e.preventDefault();
     setIsSubmitting(true);
 
+    // If configured to use EmailJS in-browser, send directly via EmailJS
+    if (USE_EMAILJS) {
+      if (!EMAILJS_SERVICE || !EMAILJS_TEMPLATE) {
+        toast({ title: 'Error', description: 'EmailJS not configured (service/template).', variant: 'destructive' });
+        setIsSubmitting(false);
+        return;
+      }
+
+      try {
+        const templateParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'amezghani5@gmail.com',
+        } as Record<string, string>;
+
+        await emailjs.send(EMAILJS_SERVICE, EMAILJS_TEMPLATE, templateParams);
+
+        toast({ title: 'Success', description: 'Message sent successfully!' });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } catch (error) {
+        console.error('EmailJS send error', error);
+        toast({ title: 'Error', description: 'Failed to send message via EmailJS.', variant: 'destructive' });
+      } finally {
+        setIsSubmitting(false);
+      }
+
+      return;
+    }
+
+    const API_BASE = import.meta.env.VITE_API_BASE_URL;
+    const RECAPTCHA_SITE = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+
+    if (!API_BASE) {
+      toast({ title: 'Error', description: 'API base URL is not configured.', variant: 'destructive' });
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const API_URL = `${import.meta.env.VITE_API_BASE_URL}/send-email`;
+      // Ensure reCAPTCHA is loaded
+      if (!RECAPTCHA_SITE) {
+        throw new Error('reCAPTCHA site key is not configured.');
+      }
+
+      await loadRecaptcha(RECAPTCHA_SITE);
+
+      const grecaptcha = (window as any).grecaptcha;
+      const recaptchaToken = await grecaptcha.execute(RECAPTCHA_SITE, { action: 'contact' });
+
+      // Request short-lived token from backend
+      const tokenResp = await fetch(`${API_BASE}/request-email-token`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ recaptchaToken }),
+      });
+
+      if (!tokenResp.ok) {
+        const err = await tokenResp.json().catch(() => ({}));
+        throw new Error(err.message || `Token request failed: ${tokenResp.status}`);
+      }
+
+      const { token } = await tokenResp.json();
+
+      // Send email using short-lived token
+      const API_URL = `${API_BASE}/send-email`;
       const response = await fetch(API_URL, {
-      
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': import.meta.env.VITE_EMAIL_API_KEY,
+          'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify({
-          from: 'amezghani603@gmail.com', 
-          to: 'amezghani603@gmail.com', // 👈 Replace with your own email address
+          to: 'amezghani5@gmail.com', // 👈 Replace with your own email address
           subject: `[Portfolio Contact] ${formData.subject}`,
           html: `
             <div style="font-family: Arial, sans-serif;">
@@ -59,19 +150,20 @@ export default function ContactSection() {
       });
 
       if (!response.ok) {
-        throw new Error('Error sending email');
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
       }
 
-      toast({
-        title: 'Success',
-        description: 'Message sent successfully!',
-      });
+      const result = await response.json();
+      console.log('Email sent successfully:', result);
+
+      toast({ title: 'Success', description: 'Message sent successfully!' });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.error(error);
+      console.error('Email sending error:', error);
       toast({
         title: 'Error',
-        description: 'An error occurred. Please try again.',
+        description: error instanceof Error ? error.message : 'An error occurred. Please try again.',
         variant: 'destructive'
       });
     } finally {
@@ -114,7 +206,7 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold portfolio-gradient-text text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +215,7 @@ export default function ContactSection() {
           >
             Contact Me
           </motion.h2>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Form */}
             <motion.div
@@ -137,7 +229,7 @@ export default function ContactSection() {
                 <h3 className="text-2xl font-semibold text-portfolio-text mb-6">
                   Send me a message
                 </h3>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <input
@@ -150,7 +242,7 @@ export default function ContactSection() {
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors"
                     />
                   </div>
-                  
+
                   <div>
                     <input
                       type="email"
@@ -162,7 +254,7 @@ export default function ContactSection() {
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors"
                     />
                   </div>
-                  
+
                   <div>
                     <input
                       type="text"
@@ -174,7 +266,7 @@ export default function ContactSection() {
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors"
                     />
                   </div>
-                  
+
                   <div>
                     <textarea
                       name="message"
@@ -186,7 +278,7 @@ export default function ContactSection() {
                       className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-portfolio-accent focus:border-transparent transition-colors resize-none"
                     />
                   </div>
-                  
+
                   <motion.button
                     type="submit"
                     disabled={isSubmitting}
@@ -206,7 +298,7 @@ export default function ContactSection() {
                 </form>
               </div>
             </motion.div>
-            
+
             {/* Contact Info */}
             <motion.div
               className="space-y-6"
@@ -219,7 +311,7 @@ export default function ContactSection() {
                 <h3 className="text-2xl font-semibold text-portfolio-text mb-6">
                   Contact Information
                 </h3>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-portfolio-accent/10 rounded-full text-portfolio-accent">
@@ -230,9 +322,9 @@ export default function ContactSection() {
                       <p className="text-portfolio-text">ahmed.mezghani@enis.tn</p>
                     </div>
                   </div>
-                  
-                  
-                  
+
+
+
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-portfolio-accent/10 rounded-full text-portfolio-accent">
                       <MapPin className="h-5 w-5" />
@@ -244,12 +336,12 @@ export default function ContactSection() {
                   </div>
                 </div>
               </div>
-              
+
               <div className="portfolio-card">
                 <h3 className="text-xl font-semibold text-portfolio-text mb-6">
                   Connect with me
                 </h3>
-                
+
                 <div className="flex flex-wrap gap-4">
                   {contactLinks.map((link, index) => (
                     <motion.a
