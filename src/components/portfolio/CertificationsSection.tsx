@@ -2,28 +2,52 @@ import { motion } from 'framer-motion';
 import { Award, ExternalLink, FileText } from 'lucide-react';
 
 export default function CertificationsSection() {
-const certifications = [
-  
-  {
-    title: "Python Data Associate",
-    provider: "DataCamp",
-    description: "Certification covering data management, cleaning, EDA, and visualization in Python, with hands-on experience in importing, validating, and transforming data.",
-    certificateUrl: "https://www.datacamp.com/certificate/PDA0013831431267",
-    skills: [
-      "Python",
-      "pandas",
-      "NumPy",
-      "Matplotlib",
-      "Seaborn",
-      "Data Cleaning",
-      "Data Validation", 
-      "Exploratory Data Analysis (EDA)", 
-      "Data Visualization"
-    ],
-    issueDate: "2024-02",
-    logo: "public/images/python-data-associate.png"
-  },
-  {
+  const certifications = [
+
+    {
+      title: "Python Data Associate",
+      provider: "DataCamp",
+      description: "Certification covering data management, cleaning, EDA, and visualization in Python, with hands-on experience in importing, validating, and transforming data.",
+      certificateUrl: "https://www.datacamp.com/certificate/PDA0013831431267",
+      skills: [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "Data Cleaning",
+        "Data Validation",
+        "Exploratory Data Analysis (EDA)",
+        "Data Visualization"
+      ],
+      issueDate: "2024-02",
+      logo: "public/images/python-data-associate.png"
+    },
+    {
+      title: "Fundamentals of MLOps",
+      provider: "KodeKloud",
+      description: "fundamentals of Ops in Machine learning, Data Collection and Preparation, Model Development and Training, Model Deployment and Serving",
+      certificateUrl: "https://learn.kodekloud.com/certificate/d99dcde9-a84e-4cd0-add1-032a8cfdd1ba", // replace with actual verification link if available
+      skills: [
+        "MLflow (experiment tracking – fundamentals)",
+        "BentoML (model serving – introduction)",
+        "Apache Airflow & Prefect (pipeline orchestration – basics)",
+        "Apache Spark / PySpark (large-scale data processing – overview)",
+        "Apache Kafka & Apache Flink (streaming data – overview)"
+      ],
+      issueDate: "2026-02",
+      logo: "public/images/orange-digital-center.png"
+    },
+    {
+      title: "Introduction to Data and Data Science",
+      provider: "365 Data Science",
+      description: "Fundamentals of data types, collection, cleaning, analysis, and visualization.",
+      certificateUrl: "https://learn.365datascience.com/c/b11bd28175/",
+      skills: ["Data Lifecycle", "Visualization", "Cleaning", "Data Types"],
+      issueDate: "2024",
+      logo: "public/images/data-science-intro.pdf"
+    },
+    {
       title: "Scrum Fundamentals Certified",
       provider: "SCRUMstudy",
       description: "Foundation-level certification covering the principles of Scrum, roles, artifacts, and events. Focused on Agile project management and value-based prioritization.",
@@ -37,55 +61,29 @@ const certifications = [
       issueDate: "2024-09",
       logo: "public/images/scrum-fundamentals.png"
     },
-
-  {
-    title: "Introduction to Data and Data Science",
-    provider: "365 Data Science",
-    description: "Fundamentals of data types, collection, cleaning, analysis, and visualization.",
-    certificateUrl: "https://learn.365datascience.com/c/b11bd28175/",
-    skills: ["Data Lifecycle", "Visualization", "Cleaning", "Data Types"],
-    issueDate: "2024",
-    logo: "public/images/data-science-intro.pdf"
-  },
-  {
-    title: "Fullstack Web Development with MERN",
-    provider: "Orange Digital Center",
-    description: "3-day hands-on training focused on building fullstack web applications using the MERN stack (MongoDB, Express.js, React, Node.js).",
-    certificateUrl: "images/FullStackWebMERN.pdf", // replace with actual verification link if available
-    skills: [
-      "MongoDB",
-      "Express.js",
-      "React",
-      "Node.js",
-      "Fullstack Development",
-      "Web Development"
-    ],
-    issueDate: "2025-09",
-    logo: "public/images/orange-digital-center.png"
-  },
-{
-  title: "Scrum for Ops and DevOps Fundamentals Certified (SODFC)",
-  provider: "VMEdu Inc.",
-  description: "Certification on applying Scrum to IT Operations and DevOps, covering recurring work, incident handling, SLAs, swarming, and escalations to ensure agility in business-critical services.",
-  certificateUrl: "https://www.scrumstudy.com/certification/verify?type=SODFC&number=1107043", // replace with actual verification link
-  skills: [
-    "ScrumOps",
-    "Agile Operations",
-    "DevOps Practices",
-    "Operational User Stories",
-    "Work Packages & Templates",
-    "Incident Management",
-    "Service Level Agreements (SLAs)",
-    "Swarming & Escalations"
-  ],
-  issueDate: "2025-09",
-  logo: "public/images/scrum-ops-devops.png"
-}
+    {
+      title: "Scrum for Ops and DevOps Fundamentals Certified (SODFC)",
+      provider: "VMEdu Inc.",
+      description: "Certification on applying Scrum to IT Operations and DevOps, covering recurring work, incident handling, SLAs, swarming, and escalations to ensure agility in business-critical services.",
+      certificateUrl: "https://www.scrumstudy.com/certification/verify?type=SODFC&number=1107043", // replace with actual verification link
+      skills: [
+        "ScrumOps",
+        "Agile Operations",
+        "DevOps Practices",
+        "Operational User Stories",
+        "Work Packages & Templates",
+        "Incident Management",
+        "Service Level Agreements (SLAs)",
+        "Swarming & Escalations"
+      ],
+      issueDate: "2025-09",
+      logo: "public/images/scrum-ops-devops.png"
+    }
 
 
 
 
-];
+  ];
 
 
   const openCertificate = (url: string) => {
@@ -101,7 +99,7 @@ const certifications = [
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.h2 
+          <motion.h2
             className="text-4xl md:text-5xl font-bold portfolio-gradient-text text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -110,7 +108,7 @@ const certifications = [
           >
             Certifications
           </motion.h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {certifications.map((cert, index) => (
               <motion.div
@@ -142,7 +140,7 @@ const certifications = [
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="space-y-3">
                     <div className="flex flex-wrap gap-2">
                       {cert.skills.map((skill, skillIndex) => (
@@ -154,7 +152,7 @@ const certifications = [
                         </span>
                       ))}
                     </div>
-                    
+
                     <div className="flex items-center justify-between pt-4 border-t border-border/50">
                       <span className="text-sm text-portfolio-text-muted">
                         Issued: {cert.issueDate}

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+
+
 const fadeInUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -13,11 +15,13 @@ export default function WelcomeSection() {
   return (
     <section
       id="welcome"
-      className="flex flex-col md:flex-row items-center justify-center min-h-[75vh] bg-gradient-to-br from-portfolio-accent/10 via-background to-background overflow-hidden px-6 md:px-12 py-16 gap-12 md:gap-20"
+      className="relative flex flex-col md:flex-row items-center justify-center min-h-[75vh] bg-gradient-to-br from-portfolio-accent/10 via-background to-background overflow-hidden px-6 md:px-12 py-16 gap-12 md:gap-20"
     >
+      <div className="absolute inset-0 z-0 pointer-events-none">
+      </div>
       {/* Text on the left */}
       <motion.div
-        className="max-w-xl text-center md:text-left"
+        className="max-w-xl text-center md:text-left z-10"
         variants={fadeInUp(0.3)}
         initial="hidden"
         whileInView="visible"
@@ -34,7 +38,7 @@ export default function WelcomeSection() {
           className="mt-4 text-base md:text-lg leading-relaxed text-portfolio-text-muted"
           variants={fadeInUp(0.7)}
         >
-          A <span className="font-semibold text-portfolio-accent">Computer Engineering student </span> 
+          A <span className="font-semibold text-portfolio-accent">Computer Engineering student </span>
           passionate about <span className="underline decoration-portfolio-accent/50">computer vision</span>,{" "}
           <span className="underline decoration-portfolio-accent/50">full-stack web development</span>, and{" "}
           <span className="underline decoration-portfolio-accent/50">Agile methodologies (Scrum)</span>.
@@ -59,7 +63,7 @@ export default function WelcomeSection() {
 
       {/* Profile image */}
       <motion.div
-        className="relative group w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl"
+        className="relative group w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl z-10"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.7, delay: 0.6 }}
