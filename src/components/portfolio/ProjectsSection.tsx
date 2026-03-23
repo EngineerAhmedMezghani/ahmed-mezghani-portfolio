@@ -5,30 +5,6 @@ import { ExternalLink, Github, X } from 'lucide-react';
 export default function ProjectsSection() {
   const projects = [
     {
-      title: "Android App - Computer Hardware Sales",
-      tech: ["Java", "Android Studio", "SQLite", "Material Design"],
-      description: "Complete mobile application for buying and selling computer hardware. Implementation of a product catalog, secure authentication system, order and shopping cart management. Intuitive user interface with smooth animations and responsive design.",
-      objectives: "Create an accessible mobile platform to democratize computer hardware purchasing",
-      challenges: "Performance optimization for low-end devices, offline/online data synchronization",
-      features: ["Filterable product catalog", "Shopping cart system", "Secure authentication", "Push notifications", "Offline mode"],
-      image: "/images/android-app.png",
-      category: "Mobile Development",
-      github: "https://github.com/EngineerAhmedMezghani/MyApplication8final/tree/main",
-      demo: null
-    },
-    {
-      title: "Football Match Analysis with Computer Vision",
-      tech: ["Python", "YOLO", "OpenCV", "TensorFlow", "NumPy"],
-      description: "Advanced football match analysis system using computer vision techniques. Player detection and tracking with YOLO, automatic extraction of game statistics, and report generation for coaches and sports analysts.",
-      objectives: "Provide accurate and automated insights for tactical sports analysis",
-      challenges: "Accurate detection of moving players, handling occlusions, real-time processing",
-      features: ["Player detection", "Trajectory tracking", "Statistics calculation", "Position heatmaps", "Report export"],
-      image: "images/computer-vision.png",
-      category: "AI - Computer Vision",
-      github: "https://github.com/EngineerAhmedMezghani/computer-vision-project-2",
-      // demo: "https://football-analysis-demo.com"
-    },
-    {
     title: "SecureGate",
     tech: ["FastAPI", "React", "PostgreSQL", "Python/Typer", "Rego (OPA)"],
     description: "SecureGate secures AI/ML pipelines in a DevSecOps environment. It detects vulnerabilities in notebooks, models, and dependencies, enforces security policies, and provides immediate developer feedback via dashboards and CLI tools.",
@@ -49,19 +25,6 @@ export default function ProjectsSection() {
     demo: null,
     placeholder: true
   },
-
-    {
-      title: "Interactive Personal Portfolio",
-      tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "AI Chatbot", "Email Automation"],
-      description: "Modern personal portfolio website with smooth animations and responsive design. Optimized for performance and accessibility, integrating a dark/light theme system and engaging micro-interactions.",
-      objectives: "Create a professional showcase reflecting my technical and creative skills",
-      challenges: "Performance optimization, full accessibility, consistent multi-device design",
-      features: ["Responsive design", "Dark/light mode", "CSS animations", "SEO optimized", "Performance optimized"],
-      image: "/images/Portfolio.png",
-      category: "Full-Stack Web Development",
-      github: "https://github.com/EngineerAhmedMezghani/ahmed-mezghani-portfolio",
-      demo: "https://ahmed-mezghani.vercel.app/"
-    },
     {
       title: "VisioTrack – Real-Time Capacity Monitoring",
       tech: ["Python", "YOLOv8", "DeepSORT", "FastAPI", "React.js", "Tailwind CSS"],
@@ -80,6 +43,54 @@ export default function ProjectsSection() {
       github: "https://github.com/EngineerAhmedMezghani/Computer-Vision-Surveillance-System",
       demo: null
     },
+    {
+      title: "MediVision AI Dashboard",
+      tech: ["Python", "FastAPI", "PyTorch", "Vision Transformer", "React", "TypeScript", "Tailwind CSS", "Motion.js"],
+      description: "AI-powered skin anomaly detection system using deep learning (google/vit-base-patch16-224 Vision Transformer). FastAPI backend with React frontend for real-time medical image analysis and healthcare diagnostics.",
+      objectives: "Create a healthcare application using computer vision to detect potential skin anomalies from medical images with high accuracy",
+      challenges: "Real-time detection accuracy, model integration with FastAPI, CORS handling, webcam integration, PDF export functionality",
+      features: ["Image upload (PNG, JPG)", "Real-time skin anomaly detection", "Confidence scoring for predictions", "Visual bounding box overlay", "Severity classification (Low/Medium/High)", "PDF export functionality", "Webcam integration"],
+      image: "/images/medivision-dashboard.png",
+      category: "Healthcare AI",
+      github: "https://github.com/EngineerAhmedMezghani/computer-vision-healthcare",
+      demo: null
+    },
+    {
+      title: "Football Match Analysis with Computer Vision",
+      tech: ["Python", "YOLO", "OpenCV", "TensorFlow", "NumPy"],
+      description: "Advanced football match analysis system using computer vision techniques. Player detection and tracking with YOLO, automatic extraction of game statistics, and report generation for coaches and sports analysts.",
+      objectives: "Provide accurate and automated insights for tactical sports analysis",
+      challenges: "Accurate detection of moving players, handling occlusions, real-time processing",
+      features: ["Player detection", "Trajectory tracking", "Statistics calculation", "Position heatmaps", "Report export"],
+      image: "images/computer-vision.png",
+      category: "AI - Computer Vision",
+      github: "https://github.com/EngineerAhmedMezghani/computer-vision-project-2",
+      // demo: "https://football-analysis-demo.com"
+    },
+    {
+      title: "Interactive Personal Portfolio",
+      tech: ["React", "TypeScript", "Tailwind CSS", "Framer Motion", "AI Chatbot", "Email Automation"],
+      description: "Modern personal portfolio website with smooth animations and responsive design. Optimized for performance and accessibility, integrating a dark/light theme system and engaging micro-interactions.",
+      objectives: "Create a professional showcase reflecting my technical and creative skills",
+      challenges: "Performance optimization, full accessibility, consistent multi-device design",
+      features: ["Responsive design", "Dark/light mode", "CSS animations", "SEO optimized", "Performance optimized"],
+      image: "/images/Portfolio.png",
+      category: "Full-Stack Web Development",
+      github: "https://github.com/EngineerAhmedMezghani/ahmed-mezghani-portfolio",
+      demo: "https://ahmed-mezghani.vercel.app/"
+    },
+    {
+      title: "Android App - Computer Hardware Sales",
+      tech: ["Java", "Android Studio", "SQLite", "Material Design"],
+      description: "Complete mobile application for buying and selling computer hardware. Implementation of a product catalog, secure authentication system, order and shopping cart management. Intuitive user interface with smooth animations and responsive design.",
+      objectives: "Create an accessible mobile platform to democratize computer hardware purchasing",
+      challenges: "Performance optimization for low-end devices, offline/online data synchronization",
+      features: ["Filterable product catalog", "Shopping cart system", "Secure authentication", "Push notifications", "Offline mode"],
+      image: "/images/android-app.png",
+      category: "Mobile Development",
+      github: "https://github.com/EngineerAhmedMezghani/MyApplication8final/tree/main",
+      demo: null
+    }
   ];
 
   const [modal, setModal] = useState<{ visible: boolean; title?: string }>({ visible: false });
