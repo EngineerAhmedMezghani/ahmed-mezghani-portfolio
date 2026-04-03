@@ -6,8 +6,9 @@ import WelcomeSection from './WelcomeSection';  // << Import your new component 
 import AboutSection from './AboutSection';
 import InternshipSection from './InternshipSection';
 import ProjectsSection from './ProjectsSection';
-import EducationSection from './EducationSection';
 import CertificationsSection from './CertificationsSection';
+import HackathonsSection from './HackathonsSection';
+import EducationSection from './EducationSection';
 import ExperienceSection from './ExperienceSection';
 import LanguagesSection from './LanguagesSection';
 import ContactSection from './ContactSection';
@@ -23,8 +24,9 @@ export default function Portfolio() {
         'about',
         'internships',
         'projects',
-        'education',
-        'certifications',
+        'Certifications',
+        'Hackathons',
+        'Education',
         'experience',
         'languages',
         'contact'
@@ -56,8 +58,9 @@ export default function Portfolio() {
           <AboutSection />
           <InternshipSection />
           <ProjectsSection />
-          <EducationSection />
           <CertificationsSection />
+          <HackathonsSection />
+          <EducationSection />
           <ExperienceSection />
           <LanguagesSection />
           <ContactSection />
