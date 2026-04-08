@@ -39,9 +39,11 @@ export default function WelcomeSection() {
           variants={fadeInUp(0.7)}
         >
           A <span className="font-semibold text-portfolio-accent">Computer Engineering student </span>
-          passionate about <span className="underline decoration-portfolio-accent/50">computer vision</span>,{" "}
-          <span className="underline decoration-portfolio-accent/50">full-stack web development</span>, and{" "}
-          <span className="underline decoration-portfolio-accent/50">Agile methodologies (Scrum)</span>.
+          passionate about 
+          <span className="underline decoration-portfolio-accent/50">Building Full-Stack Applications</span>,{" "}
+          <span className="underline decoration-portfolio-accent/50">computer vision</span>,{" "}
+          <span className="underline decoration-portfolio-accent/50">AI and MLOps Engineering</span>, and{" "}
+          <span className="underline decoration-portfolio-accent/50">Cloud Computing</span>.
         </motion.p>
 
         <motion.div

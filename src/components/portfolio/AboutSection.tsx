@@ -108,7 +108,7 @@ export default function AboutSection() {
           <p>
             Recently shipped a real-time retail analytics system at{' '}
             <span className="font-semibold text-portfolio-accent">VisShop AI</span> with 
-            96% accuracy. Certified in{' '}
+            . Certified in{' '}
             <span className="font-semibold text-portfolio-accent">MLOps</span>,{' '}
             <span className="font-semibold text-portfolio-accent">Python Data Analysis</span>, and{' '}
             <span className="font-semibold text-portfolio-accent">Scrum</span>.

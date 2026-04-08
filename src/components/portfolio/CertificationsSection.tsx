@@ -3,7 +3,24 @@ import { Award, ExternalLink, FileText } from 'lucide-react';
 
 export default function CertificationsSection() {
   const certifications = [
-
+    {
+      title: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate",
+      provider: "Oracle",
+      description: "Built a solid foundation in cloud computing using Oracle Cloud Infrastructure. Covers core cloud architecture (Regions, Availability Domains, Fault Domains), Identity & Access Management (IAM, policies, compartments), Networking (VCN, subnets, gateways, routing, security), and Compute, Storage, and Load Balancing services.",
+      certificateUrl: "https://catalog-education.oracle.com/pls/certview/sharebadge?id=YOUR_BADGE_ID", // Replace with your actual badge URL
+      skills: [
+        "Oracle Cloud Infrastructure",
+        "Regions & Availability Domains",
+        "Fault Domains",
+        "Identity & Access Management (IAM)",
+        "Virtual Cloud Network (VCN)",
+        "Networking & Subnets",
+        "Load Balancing",
+        "Cloud Security"
+      ],
+      issueDate: "2025",
+      logo: "public/images/oracle-oci-foundations.png"
+    },
     {
       title: "Python Data Associate",
       provider: "DataCamp",
