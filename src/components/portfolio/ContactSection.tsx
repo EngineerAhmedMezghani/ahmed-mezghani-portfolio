@@ -62,8 +62,18 @@ export default function ContactSection() {
                     <Mail className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-sm text-portfolio-text-muted">Email</p>
+                    <p className="text-sm text-portfolio-text-muted">Academic Email</p>
                     <p className="text-portfolio-text font-medium">ahmed.mezghani@enis.tn</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="p-3 bg-portfolio-accent/10 rounded-full text-portfolio-accent">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-portfolio-text-muted">Personal Email</p>
+                    <p className="text-portfolio-text font-medium">ahmed.mezghani.engineer@gmail.com</p>
                   </div>
                 </div>
 

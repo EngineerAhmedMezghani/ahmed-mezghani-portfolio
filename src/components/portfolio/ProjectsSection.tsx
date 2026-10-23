@@ -5,26 +5,26 @@ import { ExternalLink, Github, X } from 'lucide-react';
 export default function ProjectsSection() {
   const projects = [
     {
-    title: "SecureGate",
-    tech: ["FastAPI", "React", "PostgreSQL", "Python/Typer", "Rego (OPA)"],
-    description: "SecureGate secures AI/ML pipelines in a DevSecOps environment. It detects vulnerabilities in notebooks, models, and dependencies, enforces security policies, and provides immediate developer feedback via dashboards and CLI tools.",
-    objectives: "Strengthen AI/ML pipeline security while streamlining developer workflows and enforcing compliance with organizational and industry standards.",
-    challenges: "Detecting sensitive data in notebooks, ensuring safe model deployments, scanning dependencies for vulnerabilities, and integrating seamless CI/CD enforcement.",
-    features: [
-      "Notebook analysis for sensitive data",
-      "Model inspection for unsafe configurations",
-      "Dependency scanning for vulnerabilities",
-      "Policy engine enforcing OWASP LLM Top 10 and MITRE ATLAS rules",
-      "Interactive dashboard for developer feedback",
-      "CLI security tool for local scans",
-      "CI/CD integration with automated security checks"
-    ],
-    image: "/images/SecureGate.png",
-    category: "AI/ML Security",
-    github: null,
-    demo: null,
-    placeholder: true
-  },
+      title: "SecureGate",
+      tech: ["FastAPI", "React", "PostgreSQL", "Python/Typer", "Rego (OPA)"],
+      description: "SecureGate secures AI/ML pipelines in a DevSecOps environment. It detects vulnerabilities in notebooks, models, and dependencies, enforces security policies, and provides immediate developer feedback via dashboards and CLI tools.",
+      objectives: "Strengthen AI/ML pipeline security while streamlining developer workflows and enforcing compliance with organizational and industry standards.",
+      challenges: "Detecting sensitive data in notebooks, ensuring safe model deployments, scanning dependencies for vulnerabilities, and integrating seamless CI/CD enforcement.",
+      features: [
+        "Notebook analysis for sensitive data",
+        "Model inspection for unsafe configurations",
+        "Dependency scanning for vulnerabilities",
+        "Policy engine enforcing OWASP LLM Top 10 and MITRE ATLAS rules",
+        "Interactive dashboard for developer feedback",
+        "CLI security tool for local scans",
+        "CI/CD integration with automated security checks"
+      ],
+      image: "/images/SecureGate.png",
+      category: "AI/ML Security",
+      github: null,
+      demo: null,
+      placeholder: true
+    },
     {
       title: "VisioTrack – Real-Time Capacity Monitoring",
       tech: ["Python", "YOLOv8", "DeepSORT", "FastAPI", "React.js", "Tailwind CSS"],
@@ -66,6 +66,16 @@ export default function ProjectsSection() {
       category: "AI - Computer Vision",
       github: "https://github.com/EngineerAhmedMezghani/computer-vision-project-2",
       // demo: "https://football-analysis-demo.com"
+    },
+    {
+      title: "Distributed Data Processing for Aviation Analytics",
+      tech: ["Apache Spark", "PySpark", "Docker", "Vue.js", "Flask"],
+      description: "SkyPulse is a real-time aviation analytics platform built with Apache Spark and Docker, processing live OpenSky Network data through a distributed cluster and PySpark pipelines. It exposes aviation insights via a Flask REST API and a Vue.js dashboard featuring interactive maps, charts, historical analytics, and cluster monitoring. Interactive Visualization Dashboard: Provides a Vue.js dashboard with live maps, charts, cluster monitoring, and historical analytics, enabling real-time visualization of processed aviation data.",
+      objectives: "Develop a scalable and efficient system for real-time aviation data processing and visualization",
+      challenges: "Handling high-velocity aviation data streams, ensuring low-latency processing, and providing real-time visualizations",
+      features: ["Real-time data ingestion from OpenSky Network", "Distributed processing with Apache Spark", "Interactive visualization dashboard with Vue.js", "REST API for aviation insights", "Cluster monitoring and management"],
+      image: "/images/bigdata.png",
+      category: "Big Data & Distributed Systems",
     },
     {
       title: "Interactive Personal Portfolio",
